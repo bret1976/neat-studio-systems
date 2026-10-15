@@ -231,7 +231,7 @@ test("navigation, routes, assets, inquiry errors and accessibility", async ({
     challenge: "Review workflow",
     message: "A demonstration inquiry for testing.",
   };
-  expect((await request.post("/api/inquiries", { data: {} })).status()).toBe(
+  expect((await request.post("/api/inquiries", { data: {}, headers: authHeaders, maxRedirects: 0 })).status()).toBe(
     400,
   );
   expect(
@@ -243,7 +243,7 @@ test("navigation, routes, assets, inquiry errors and accessibility", async ({
       })
     ).status(),
   ).toBe(400);
-  expect((await request.post("/api/inquiries", { data: valid })).status()).toBe(
+  expect((await request.post("/api/inquiries", { data: valid, headers: authHeaders, maxRedirects: 0 })).status()).toBe(
     503,
   );
   await page.goto("/contact");
