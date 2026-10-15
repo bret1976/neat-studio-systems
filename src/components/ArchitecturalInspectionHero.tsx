@@ -114,6 +114,7 @@ export function ArchitecturalInspectionHero({
             />
           )}
         </div>
+        {active && <div className="inspection-callout" aria-hidden="true"><span className="mono">{active.title}</span><p>{active.description}</p><small>ILLUSTRATIVE / HUMAN REVIEW REQUIRED</small></div>}
         <div className="field-bottom mono">
           <span>
             MODEL 001 / RESIDENTIAL STUDY
