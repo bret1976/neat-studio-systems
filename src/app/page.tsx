@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArchitecturalInspectionHero } from "@/components/ArchitecturalInspectionHero";
-import { ArchitecturalDrawing } from "@/components/ArchitecturalDrawing";
 import {
   DesignContext,
   WorkflowStory,
@@ -55,7 +54,7 @@ export default function Home() {
         <Label index="02">THE DESIGN BOTTLENECK</Label>
         <div className="problem-intro">
           <div className="tower-drawing ruled">
-            <ArchitecturalDrawing />
+            <Image className="tower-image" src="/drawings/tower.svg" width={1000} height={1100} alt="Original axonometric tower study with a structural facade grid and ground-level podium" unoptimized />
             <span className="red-circle" aria-hidden="true" />
             <span className="mono">
               NORTH COURT / DESIGN STUDY

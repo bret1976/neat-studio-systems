@@ -1,6 +1,7 @@
 # Original asset inventory
 
 - `public/drawings/elevation.svg`: original scripted 1200×700 North Court three-story elevation. Facade, glazed bays, stairs, guardrail, trees, structural axes and scale labels. Created by `scripts/drawings.py`; no reference artwork copied.
+- `public/drawings/tower.svg`: original axonometric vertical study, glazing grid, structural piers and podium. Replaces an initial rotated-elevation approximation after screenshot review.
 - `public/drawings/plan.svg`: original 1000×700 courtyard floor plan with door arcs, furniture, stairs and grid. Same local drawing generator.
 - `public/logos/neat.svg`, `neat-white.svg`, `mark.svg`; `src/app/icon.svg`: original geometric NEAT identity and drafting-point compact mark. SVG, no licensed third-party logo.
 - `public/images/north-court-render.webp`: original generated architectural visualization, built-in image-generation tool. Original source retained at `/Users/majid/.codex/generated_images/01a12b84-900b-7081-8341-78d7677a013e/exec-9191c4ec-f84f-4d5a-84de-f14f9065792a.png`. Optimized to 1800px WebP with Sharp. Illustrative fictional building, not a real project/client.

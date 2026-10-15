@@ -2349,3 +2349,4 @@ section {
     left: 70px;
   }
 }
+.tower-drawing .tower-image{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transform:none}
