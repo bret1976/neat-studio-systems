@@ -38,3 +38,8 @@ NEAT owns new geometric wordmark, SVG elevation and plan, issue regions, product
 ## Extended live captures
 
 full-desktop-0..16.png advance through introduction, problem fields, context interstitial/plan, assist preview, workflow annotation states, use cases and footer with actual wheel input. The footer stops at its natural end in the later repeated captures. The completed source heading measured 46.6667px at 1440×900. Additional source HTML parsing in supplied-source-inventory.json inventories seven main headings and 75 asset references without copying the assets. Mobile wheel captures confirm a horizontally scrolling problem row and stacked hero caption after the source loader settles. Exact every-phase intermediate frames are not all captured; the recording and creator case study supplement the sampled live states.
+
+
+## Final mobile coverage
+
+A fresh headless browser completed 15 settled mobile wheel captures after the loader (final-mobile-0..14.png). They cover hero, introduction, native horizontal problem row, context word transitions, progressive floor-plan layers, product previews, workflow introduction, use cases, final CTA and footer. This resolves the initial mobile capture's loader-heavy coverage. Both reference and local section sheets were visually inspected. Native mobile menu, long-form copy density, original building geometry and reduced pinning remain differences described in visual-comparison.md.
