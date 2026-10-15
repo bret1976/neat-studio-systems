@@ -1,0 +1,1407 @@
+NEAT — Complete Codex Master Build Prompt
+ARCHITECTURAL INTELLIGENCE / 001
+
+NEAT.
+INTELLIGENT DESIGN SYSTEMS
+Design freely. Build intelligently.
+
+
+This is the entire master prompt rewritten for NEAT, including all the homepage content, original product naming, interactive architectural hero, drawing-based animations, scroll sequences, complete frontend and backend architecture, secondary pages, and deployment requirements.
+The design reference is Heron AI. Its creators specifically describe three distinctive techniques: drag-to-reveal building issues, a four-state scroll narrative, and drawing-to-render transitions using an organic ink-like mask. Those are central to this specification, not optional decorations. 
+
+Codrops
+
+
+
+CODEX MASTER BUILD PROMPT — NEAT
+Version 2.0 — Complete Production Specification
+Interactive Architectural AI Platform, Full Website & Backend Architecture
+
+1. PRIMARY OBJECTIVE
+Build a complete, original, production-ready website for:
+NEAT
+Full identity:
+NEAT — Intelligent Design Systems
+Primary tagline:
+Design freely. Build intelligently.
+Primary website design reference:
+https://heronaiapp.com/
+New standalone GitHub repository:
+neat-studio-systems
+Deployment target:
+Vercel.
+Core directive
+The actual Heron AI website is the mandatory visual and interactive design reference.
+Recreate its architectural drawing aesthetic, technical typography, editorial layout, scroll choreography, interaction patterns, and visual storytelling as faithfully as possible, using original code and appropriately licensed assets.
+Replace the Heron brand and product presentation with the entirely original NEAT identity and content specified here.
+The finished website must look and feel like professional architecture software transformed into a sophisticated interactive website.
+Do not create a generic AI SaaS landing page.
+Most importantly:
+THE INTERACTIVE ARCHITECTURAL DRAWING HERO MUST ACTUALLY WORK.
+The user must be able to drag across a building drawing and reveal meaningful architectural observations.
+The interaction cannot be a static screenshot, decorative cursor, or fake loading animation.
+The original reference establishes the visual language for the entire website.
+Everything below the hero must extend that same design language.
+
+2. REFERENCE WEBSITE AUDIT
+Before coding, inspect:
+https://heronaiapp.com/
+Study both the desktop and mobile experiences.
+Also read this design case study:
+https://tympanus.net/codrops/2026/10/12/heron-ai/
+The design creators describe the real interactive mechanisms and their design intentions.
+Audit these elements
+1. Preloader.
+2. Initial architectural drawing.
+3. Background color.
+4. Grid and drafting lines.
+5. Font families and weights.
+6. Brand typography.
+7. Navigation.
+8. Hero headline layout.
+9. Building illustration.
+10. Drag-to-reveal interaction.
+11. Violation annotations.
+12. Selection rectangle.
+13. Cursor behavior.
+14. Technical coordinate labels.
+15. Interactive hotspots.
+16. Numbered problem statements.
+17. Software integrations presentation.
+18. Scroll-driven architectural diagrams.
+19. Sticky drawing transitions.
+20. Product interface previews.
+21. Four-stage operational demonstration.
+22. Ink-mask transitions.
+23. Use-case presentation.
+24. Final call to action.
+25. Footer.
+26. Responsive behavior.
+27. Reduced-motion behavior.
+Required deliverable
+Create:
+docs/heron-reference-audit.md
+Include:
+- Annotated screenshots.
+- Section inventory.
+- Visual measurements.
+- Typography analysis.
+- Color sampling.
+- Interaction descriptions.
+- Responsive observations.
+- Animation timing notes.
+- Image aspect ratios.
+- Asset requirements.
+- Differences between observed and inferred behavior.
+Do not begin generic page construction without inspecting the actual reference.
+Reference fidelity hierarchy
+1. Interactive hero behavior.
+2. Architectural drawing language.
+3. Typographic composition.
+4. Scroll-driven experience.
+5. Ink-transition effects.
+6. Layout geometry.
+7. Technical annotation design.
+8. Navigation and interaction details.
+9. Responsive adaptation.
+10. Supporting visual refinements.
+Use original implementation code and original or licensed illustrations rather than copying proprietary source files.
+
+3. NEW BRAND IDENTITY
+Company
+NEAT
+Full descriptor
+INTELLIGENT DESIGN SYSTEMS
+Primary tagline
+DESIGN FREELY.
+BUILD INTELLIGENTLY.
+Secondary brand statements
+PRECISION WITHOUT REPETITION.
+DESIGN WITH MORE CONFIDENCE.
+INTELLIGENCE INSIDE THE DRAWING.
+BETTER MODELS. BETTER DECISIONS.
+YOUR DESIGN. YOUR CONTROL.
+NEAT company concept
+NEAT is a proposed architectural intelligence platform that brings model analysis, design coordination, rule-based review, AI-assisted recommendations, and controlled automation into the architectural design process.
+The goal is to reduce repetitive coordination work while helping architects and technical design teams focus on higher-value design decisions.
+NEAT is conceived around two complementary products:
+NEAT Assist
+An intelligent assistant for reviewing and interacting with architectural models.
+NEAT Control
+A centralized workspace for model issues, team reviews, approvals, project standards, and design quality oversight.
+Both products should be presented as part of a coherent architecture workflow ecosystem.
+Until actual integrations and production services are completed, product functionality must be clearly distinguished from interactive marketing demonstrations.
+Brand personality
+- Precise
+- Calm
+- Technical
+- Architectural
+- Intelligent
+- Restrained
+- Thoughtful
+- Dependable
+- Contemporary
+- Human-centered
+Brand logo
+Create an original NEAT wordmark.
+Possible visual direction:
+NEAT.
+The period can act as a precise drafting point.
+Construct an original geometric identity influenced by architectural notation, alignment markers, and technical precision.
+Do not copy Heron's bird identity or trademark.
+Create:
+- Primary horizontal wordmark.
+- Compact logomark.
+- Favicon.
+- Monochrome versions.
+- SVG logo files.
+- Responsive logo treatments.
+
+4. VISUAL DESIGN SYSTEM
+The primary reference is Heron AI's architectural software-inspired website.
+Proposed colors
+Warm architectural paper:
+#F0EEE7
+Primary ink:
+#20211E
+Dark drawing field:
+#111514
+Accent red:
+#C84932
+Muted annotation grey:
+#85847B
+Technical line:
+#C9C7BD
+Warm white:
+#FAF9F5
+Muted red surface:
+#F1DBD5
+These are NEAT design tokens.
+Measure the actual reference palette during inspection and refine the values accordingly.
+Typography
+Choose properly licensed fonts that match the reference's contemporary technical/editorial typography.
+Use:
+- Clean modern grotesque headings.
+- Precise technical labels.
+- Readable body copy.
+- Bold oversized statements.
+- Small uppercase metadata.
+- Distinct numeric identifiers.
+Suggested options:
+Inter Tight.
+IBM Plex Sans.
+A properly licensed Helvetica-style grotesque.
+IBM Plex Mono for technical labels where appropriate.
+Do not force an unrelated typography style on the original design.
+Grid system
+Architectural drawing grids should inform the entire interface.
+Use:
+- Fine hairlines.
+- Grid intersections.
+- Alignment guides.
+- Measurement ticks.
+- Coordinate labels.
+- Redline annotations.
+- Rectangular technical UI.
+- Building-plan contours.
+- Dimension arrows.
+- Precise panel borders.
+Do not use neon gradients, glowing AI brains, frosted glass cards, or generic startup illustrations.
+Motion philosophy
+Motion should feel like a drawing being examined, revised, annotated, and completed.
+Use:
+- Drawing-line reveals.
+- Cursor-linked inspection.
+- Redline annotations.
+- Masked image transformations.
+- Technical panel transitions.
+- Scroll-driven model states.
+- Numbered annotation sequences.
+Avoid excessive decorative animation.
+
+5. COMPLETE HOMEPAGE CONTENT
+Use the following copy.
+All NEAT product names, headlines, service descriptions, and supporting content are original replacements.
+Do not retain Heron branding or copy in the finished website.
+
+SECTION 01 — INTERACTIVE HERO
+Navigation
+Logo:
+NEAT.
+Navigation:
+PRODUCT
+HOW IT WORKS
+SOLUTIONS
+RESOURCES
+ABOUT
+Primary CTA:
+REQUEST ACCESS
+Technical eyebrow
+FOCUS:
+INTELLIGENT MODEL REVIEW & ARCHITECTURAL AUTOMATION
+BIM / DESIGN COORDINATION
+Main headline
+YOUR
+DESIGN
+DESERVES
+A SECOND
+SET OF EYES.
+Supporting statement
+DESIGN FREELY.
+BUILD INTELLIGENTLY.
+Hero description
+NEAT brings intelligent review, contextual design assistance, and controlled automation closer to where architectural decisions happen.
+Inspect the model.
+Understand the issue.
+Evaluate the solution.
+Keep control of every change.
+Main CTA
+EXPLORE NEAT
+Secondary CTA
+REQUEST A DEMO
+Interaction instruction
+DRAG ACROSS THE DRAWING TO REVEAL DESIGN ISSUES.
+Technical interface labels
+MODEL 001 / RESIDENTIAL STUDY
+DRAWING STATUS / UNDER REVIEW
+DESIGN OBSERVATIONS / INTERACTIVE EXAMPLE
+Building drawing
+Construct an original detailed architectural elevation of a contemporary multi-story building.
+The drawing should contain:
+- Building floors.
+- Windows.
+- Entrances.
+- Balcony edges.
+- Guardrails.
+- Stair elements.
+- Architectural dimensions.
+- Structural grid lines.
+- Annotation markers.
+- Landscaping outlines.
+- Ground plane and elevation references.
+Use original SVG or Canvas linework.
+Do not use a generic building photograph.
+The illustration must look like a professional architectural drawing.
+Interactive observations
+Provide at least four demonstrable drawing issues.
+Observation A — Balcony Protection
+Visual marker: balcony guardrail.
+Label:
+GUARDRAIL REVIEW
+Detail:
+Potential guardrail-height concern. Verify the design against the applicable adopted building code and project conditions.
+Observation B — Stair Geometry
+Visual marker: main staircase.
+Label:
+STAIR GEOMETRY REVIEW
+Detail:
+Review riser consistency, tread depth, and applicable stair requirements before documentation.
+Observation C — Door Clearance
+Visual marker: principal entrance.
+Label:
+DOOR CLEARANCE REVIEW
+Detail:
+Check required clear opening dimensions and maneuvering clearances for the intended occupancy and accessibility criteria.
+Observation D — Egress Coordination
+Visual marker: circulation corridor.
+Label:
+EGRESS PATH REVIEW
+Detail:
+Confirm exit access travel distance, corridor configuration, and applicable fire-safety requirements.
+Do not invent code violations as legally definitive.
+The observations are illustrative and must be marked as such.
+Drag interaction
+When the visitor presses and drags over the drawing:
+1. Display a technical selection rectangle.
+2. Match pointer movement closely.
+3. Detect which observations intersect the selection.
+4. Reveal corresponding redline markers.
+5. Show contextual annotation panels.
+6. Update the count of discovered observations.
+7. Preserve the discovered state until reset.
+8. Allow the user to inspect individual observations.
+9. Provide a clear Reset or Inspect Again action.
+The selection must work with a mouse, touchscreen, and compatible pointer input.
+The demo must remain keyboard accessible through a secondary observation list.
+Coordinate system
+Store observations in a normalized drawing coordinate system.
+Map positions from the drawing's source dimensions into the visible rendered geometry.
+Account for object-fit scaling, container resizing, letterboxing, and responsive layout changes.
+Do not hardcode screen pixel coordinates that break on mobile.
+Use DOM geometry and pointer events.
+Three.js is not necessary for the primary 2D architectural interaction.
+Hero animation
+The architectural building linework appears first.
+Technical grid and metadata reveal.
+The NEAT headline enters.
+Redline drawing markers briefly hint at the interaction.
+The drag instruction appears.
+All motion settles into a stable interactive state.
+Respect reduced-motion preferences.
+
+SECTION 02 — THE PROBLEM
+Eyebrow
+THE DESIGN BOTTLENECK
+Main headline
+YOUR SOFTWARE
+IS POWERFUL.
+WHY DOES
+EVERY DETAIL
+STILL DEPEND
+ON YOU?
+Body
+Modern architecture software can model remarkable buildings.
+But the work surrounding the design still demands countless manual checks, repetitive edits, disconnected reviews, and time-consuming coordination.
+The software knows the geometry.
+It doesn't necessarily know which detail needs your attention next.
+Problem 01
+MANUAL
+EVERY SMALL CHANGE BECOMES ANOTHER TASK.
+From repetitive adjustments to drawing cleanup, work that could be standardized continues to consume valuable design time.
+Problem 02
+DISCONNECTED
+PROJECT KNOWLEDGE GETS LOST BETWEEN TOOLS.
+Design decisions, model information, code references, and reviewer comments often live in separate places.
+Problem 03
+REACTIVE
+ISSUES ARE FOUND LATER THAN THEY SHOULD BE.
+Potential coordination problems may remain unnoticed until formal reviews or later design phases.
+Problem 04
+INEFFICIENT
+THE ROUTINE WORK KEEPS INTERRUPTING THE CREATIVE WORK.
+The accumulated weight of small tasks can make it harder to focus on the overall design.
+Closing statement
+GOOD DESIGN NEEDS ATTENTION.
+REPETITION DOESN'T NEED ALL OF IT.
+Visual requirements
+Recreate the reference's numbered editorial problem section.
+Use oversized statements, restrained technical labels, linework, and alternating visual emphasis.
+Do not transform the problems into generic rounded cards.
+
+SECTION 03 — DESIGN CONTEXT
+Eyebrow
+INTELLIGENCE WITH CONTEXT
+Main headline
+THE DRAWING
+IS MORE THAN
+LINES.
+Supporting statement
+THE PROJECT IS A SYSTEM.
+Copy
+A wall is connected to a room.
+A room is connected to an occupancy.
+An occupancy influences circulation, accessibility, life safety, and technical requirements.
+Good design decisions depend on understanding these relationships.
+NEAT is envisioned as an intelligence layer capable of combining model geometry, project context, review criteria, and team preferences into a more connected workflow.
+Three contextual layers
+GEOMETRY
+Understand the spatial relationships within the model.
+REQUIREMENTS
+Compare relevant design conditions against configured review criteria.
+DECISIONS
+Keep observations, recommendations, and approvals connected to their context.
+Closing statement
+THE BETTER THE CONTEXT,
+THE BETTER THE DECISION.
+Visual experience
+Build a large architectural floor plan.
+As the visitor scrolls, reveal successive layers:
+1. Basic walls and openings.
+2. Spatial zones.
+3. Circulation routes.
+4. Review annotations.
+5. Coordination metadata.
+The original floor plan stays anchored while the information layers change.
+Use a precise technical drawing visual system.
+
+SECTION 04 — THE NEAT WORKFLOW
+Eyebrow
+HOW NEAT WORKS
+Main headline
+FROM
+OBSERVATION
+TO ACTION.
+Introduction
+NEAT is designed around a simple idea: the system should bring useful information to the designer, explain what matters, and leave every consequential decision under human control.
+PHASE 01 — INSPECT
+Headline
+SEE THE
+MODEL CLEARLY.
+Description
+Analyze the available model geometry, relationships, project parameters, and configured review criteria to identify areas that may need attention.
+Interface state
+Model inspection in progress.
+Technical metadata appears.
+Potential review regions become visible.
+PHASE 02 — INTERPRET
+Headline
+UNDERSTAND
+WHAT MATTERS.
+Description
+Turn findings into understandable observations with clear context, supporting references, and suggested next steps.
+Interface state
+A redline annotation appears.
+A contextual explanation opens.
+The corresponding drawing region becomes highlighted.
+PHASE 03 — RESOLVE
+Headline
+MAKE THE
+RIGHT CHANGE.
+Description
+Review available recommendations, compare alternatives, and approve an action when appropriate.
+In a future connected product, authorized model changes could be applied through a controlled integration.
+Interface state
+Proposed modification is previewed.
+An approval control appears.
+The drawing displays before-and-after states.
+PHASE 04 — IMPROVE
+Headline
+BUILD ON
+WHAT YOU LEARN.
+Description
+Capture project decisions, approved review criteria, and team preferences to support consistency across future design work.
+Interface state
+Review history updates.
+Approved standards appear.
+The project drawing returns in its resolved state.
+Closing statement
+YOUR MODEL.
+YOUR DECISIONS.
+MORE CLARITY AT EVERY STEP.
+Mandatory animation
+This must be a four-state scroll-driven architectural demonstration.
+Do not create four ordinary feature cards.
+The same model stays in view while the operating state changes.
+Use a pinned drawing on desktop.
+The surrounding annotation panels, technical indicators, and text transition between the four phases.
+Each state must have:
+- Distinct visual changes.
+- Original annotation content.
+- Functional step progression.
+- Correct reverse-scroll behavior.
+- Responsive layout adaptations.
+The design must feel like an architectural tool being actively used.
+
+SECTION 05 — ORIGINAL INK TRANSFORMATION
+Eyebrow
+FROM ANALYSIS TO POSSIBILITY
+Main headline
+A CLEARER
+PATH FROM
+DRAWING
+TO DESIGN.
+Description
+A technical drawing contains the information.
+A design carries the intention.
+NEAT brings these two perspectives closer together, helping design teams examine details while preserving the vision of the whole.
+Before state
+A detailed line-drawn architectural building.
+After state
+A photorealistic rendering of the exact same building and composition.
+Mandatory effect
+Implement a scroll-driven ink-like transformation.
+The drawing changes into the finished architectural render through an organic edge rather than a simple opacity crossfade.
+Use an SVG mask.
+Use feTurbulence and feDisplacementMap where supported.
+The transition should remain responsive and tied directly to scroll progress.
+Ensure that the before and after images share the same camera angle and geometry.
+The effect must work in reverse.
+Provide a reduced-motion fallback.
+This must be a real implemented transition, not merely a description in the documentation.
+
+SECTION 06 — NEAT ASSIST
+Eyebrow
+PRODUCT 01 / NEAT ASSIST
+Main headline
+HELP
+WITHOUT
+LEAVING
+THE MODEL.
+Description
+NEAT Assist is conceived as a contextual design companion that helps architects ask questions, investigate model conditions, and explore proposed adjustments without constantly switching between disconnected tools.
+The designer remains responsible for reviewing and approving decisions.
+Capabilities
+MODEL QUESTIONS
+Ask contextual questions about the active design and available project information.
+DESIGN OBSERVATIONS
+Review potential geometric, coordination, or compliance-related concerns.
+SUGGESTED ACTIONS
+Explore proposed adjustments and understand what each change would affect.
+APPROVAL CONTROL
+Keep consequential model changes subject to explicit authorization.
+Example interaction
+User:
+"Review the main circulation corridor for potential clearance issues."
+NEAT Assist:
+"Two areas may need review. The east corridor appears narrower than the configured minimum, and the adjacent door may affect the required clear path. Would you like to inspect both?"
+User:
+"Show me the options."
+NEAT Assist:
+"I've prepared two conceptual alternatives. Compare the impact on the corridor and adjacent room layouts before approving any change."
+CTA
+EXPLORE NEAT ASSIST
+Design
+Create an original architectural workspace interface with a contextual assistant panel.
+Use a detailed floor plan or BIM-like drawing.
+The assistant panel should visually match the reference's product interface language.
+Do not show an ordinary generic chatbot floating over an empty background.
+
+SECTION 07 — NEAT CONTROL
+Eyebrow
+PRODUCT 02 / NEAT CONTROL
+Main headline
+THE DETAILS
+IN ONE
+CLEAR
+VIEW.
+Description
+NEAT Control is conceived as a centralized workspace for design reviews, project observations, coordination priorities, approval histories, and team-defined standards.
+It brings the technical details into focus without losing sight of the overall project.
+Capabilities
+REVIEW OVERVIEW
+A structured picture of open, reviewed, and resolved observations.
+ISSUE PRIORITIZATION
+Focus attention on matters most relevant to the project.
+PROJECT STANDARDS
+Organize configurable requirements and internal design criteria.
+APPROVAL HISTORY
+Record proposed changes, decisions, and review outcomes.
+TEAM COORDINATION
+Keep project observations connected to assigned responsibilities.
+Demonstration data
+PROJECT:
+NORTH COURT / DESIGN STUDY
+OPEN OBSERVATIONS:
+08
+UNDER REVIEW:
+04
+RESOLVED:
+12
+MODEL STATUS:
+ILLUSTRATIVE DEMO
+These figures are demonstration data, not real customer performance.
+CTA
+EXPLORE NEAT CONTROL
+Design
+Build an interactive dashboard demonstration.
+Use:
+- Technical tables.
+- Floor-plan thumbnails.
+- Redline observation lists.
+- Review statuses.
+- Model metadata.
+- Issue-detail panels.
+- Minimal charts where appropriate.
+Allow the user to select a demonstration observation and see its matching drawing area highlighted.
+Every action must have a meaningful visual response.
+Clearly label the workspace as a demo.
+
+SECTION 08 — BUILT FOR THE DESIGN TEAM
+Eyebrow
+WHO IT'S FOR
+Main headline
+MADE FOR
+THE PEOPLE
+BEHIND
+THE DRAWING.
+ARCHITECTS
+Spend less time navigating repetitive review work and more time shaping the building.
+BIM MANAGERS
+Support consistent project standards and more organized model review workflows.
+INTERIOR DESIGNERS
+Explore space-planning, clearance, and coordination observations in context.
+ENGINEERS
+Identify interdisciplinary coordination questions earlier in the design process.
+TECHNICAL DESIGNERS
+Organize the drawing details and repetitive checks that often slow documentation.
+DESIGN LEADS
+Maintain clearer visibility into reviews, responsibilities, and project decisions.
+SMALL STUDIOS
+Develop repeatable workflows without adding unnecessary operational complexity.
+MULTIDISCIPLINARY TEAMS
+Keep technical information connected across disciplines and responsibilities.
+Closing statement
+DIFFERENT ROLES.
+ONE CONNECTED DESIGN PROCESS.
+Visual requirements
+Match the original reference's editorial use-case composition.
+Use restrained typography, technical graphics, and original architectural imagery.
+Avoid generic stock photographs of office workers.
+
+SECTION 09 — DESIGNER CONTROL
+Eyebrow
+OUR PHILOSOPHY
+Main headline
+INTELLIGENCE
+SHOULD
+SUPPORT
+THE DESIGNER.
+NOT REPLACE
+THEM.
+Body
+The most important decisions in architecture require context, experience, judgment, and responsibility.
+NEAT is designed around the idea that intelligent systems should improve how designers work without taking control away from them.
+Observe carefully.
+Explain clearly.
+Recommend thoughtfully.
+Act only with authorization.
+Principles
+HUMAN APPROVAL
+Consequential changes remain subject to review.
+EXPLAINABLE OBSERVATIONS
+Review findings should include understandable reasoning and relevant context.
+PROJECT CONTROL
+Design teams determine the criteria, permissions, and review workflows.
+TRANSPARENT HISTORY
+Decisions and approved changes should remain traceable.
+Closing statement
+THE DESIGNER STAYS IN CONTROL.
+Visual direction
+Use a technical drawing and approval-state sequence.
+The user scrolls through:
+Observation.
+Recommendation.
+Review.
+Approval.
+The final state should reinforce human control rather than autonomous action.
+
+SECTION 10 — FINAL CTA
+Eyebrow
+A MORE INTELLIGENT WAY TO DESIGN
+Main headline
+LET THE
+DESIGN
+MOVE
+FORWARD.
+Supporting statement
+YOUR NEXT PROJECT DESERVES A CLEARER WORKFLOW.
+Body
+NEAT brings architectural intelligence, model review, and controlled automation into one forward-looking design experience.
+Explore what a more connected workflow could look like.
+Primary CTA
+REQUEST A DEMO
+Secondary CTA
+EXPLORE THE PRODUCT
+Closing line
+DESIGN FREELY.
+BUILD INTELLIGENTLY.
+Design
+Use a large architectural drawing transforming into a finished building visualization.
+Recreate the reference's premium technical/editorial closing experience.
+Do not use a generic brightly colored startup CTA.
+
+6. COMPLETE NAVIGATION
+Main navigation
+PRODUCT
+HOW IT WORKS
+SOLUTIONS
+RESOURCES
+ABOUT
+CONTACT
+Primary CTA:
+REQUEST ACCESS
+Product dropdown
+NEAT Assist
+NEAT Control
+Design Review
+Approval Workflows
+Solutions dropdown
+Architects
+BIM Managers
+Interior Designers
+Engineers
+Design Teams
+Resources dropdown
+Insights
+Design Workflows
+Documentation
+Frequently Asked Questions
+All dropdowns must work with mouse, keyboard, and touch.
+Use the reference's actual navigation visual treatment.
+
+7. COMPLETE FOOTER
+Brand
+NEAT.
+Descriptor
+INTELLIGENT DESIGN SYSTEMS
+Statement
+DESIGN FREELY.
+BUILD INTELLIGENTLY.
+Product
+NEAT Assist
+NEAT Control
+Design Review
+Approval Workflows
+Explore
+How It Works
+Solutions
+Resources
+About
+Contact
+Legal
+Privacy Policy
+Terms of Use
+Final copyright
+© 2026 NEAT. All rights reserved.
+Do not invent a legal company address, named founder, customer endorsements, funding history, or operational certifications.
+
+8. INTERACTIVE HERO ENGINEERING
+Create a dedicated:
+ArchitecturalInspectionHero.tsx
+Supporting components:
+ArchitecturalDrawing.tsx
+SelectionRectangle.tsx
+ObservationMarker.tsx
+ObservationPanel.tsx
+TechnicalCoordinates.tsx
+InspectionProgress.tsx
+Data structure
+Store each observation as structured data:
+- id
+- title
+- category
+- description
+- normalized bounding region
+- severity label
+- illustration reference
+- suggested review action
+- discovery state
+Use relative coordinates based on the original SVG drawing.
+Interaction state
+Implement:
+- Pointer down.
+- Pointer move.
+- Pointer up.
+- Pointer cancel.
+- Selection visualization.
+- Bounding-box intersection.
+- Observation activation.
+- Tooltip and detail panels.
+- Reset.
+- Touch handling.
+- Keyboard alternatives.
+Acceptance requirements
+The selection box follows pointer movement accurately.
+Observation markers align correctly when the illustration scales.
+The interaction works on desktop and mobile.
+The observation list remains accessible without dragging.
+No markers drift away from their corresponding building elements.
+No fake interaction that merely reveals a predetermined animation regardless of selection.
+
+9. SCROLL-STORY ENGINEERING
+Create a controlled narrative animation system.
+Recommended:
+- GSAP.
+- GSAP ScrollTrigger.
+- SVG masks.
+- CSS transforms.
+- Lightweight React state.
+Required experiences
+Four-state workflow
+Pinned architectural model.
+INSPECT → INTERPRET → RESOLVE → IMPROVE.
+Layered plan reveal
+Base floor plan.
+Geometry layer.
+Circulation layer.
+Review layer.
+Decision layer.
+Ink transformation
+Drawing-to-render state transition.
+Product panels
+Clickable observation selection.
+Approval-state demonstration.
+Section entrances
+Technical line drawing.
+Controlled typography reveals.
+Minimal panel movement.
+Do not add an arbitrary animation merely to demonstrate technical capability.
+Each interaction must communicate part of the product story.
+
+10. ORIGINAL ASSET PRODUCTION
+Create original or appropriately licensed assets.
+Required:
+1. NEAT logo and favicon.
+2. Detailed hero building elevation.
+3. Floor-plan SVG.
+4. Architectural drawing grid.
+5. Four illustrated observation regions.
+6. Inspection markers.
+7. Workflow model.
+8. Before architectural line drawing.
+9. Matching after architectural render.
+10. NEAT Assist product UI.
+11. NEAT Control product UI.
+12. Use-case technical illustrations.
+13. Open Graph image.
+Visual consistency
+All drawing assets must feel like they belong to the same architectural practice and design software environment.
+Use believable dimensions and architectural geometry.
+Avoid random labels and illegible generated numbers.
+Use actual SVG or HTML text for meaningful technical labels.
+Do not reuse Heron's proprietary illustrations.
+
+11. FRONTEND TECHNOLOGY
+Use:
+- Next.js App Router.
+- React.
+- TypeScript.
+- Tailwind CSS.
+- GSAP.
+- GSAP ScrollTrigger.
+- SVG.
+- CSS masking and filtering.
+- Zod.
+- Next.js Image.
+- Playwright.
+Use current stable compatible versions.
+Avoid heavy 3D libraries if the reference effect can be built more effectively in 2D.
+The creators of the Heron design used direct coordinate mapping for the 2D hero rather than relying on unnecessary WebGL complexity.
+Favor that practical approach.
+
+12. COMPLETE SITE ROUTES
+Create:
+/ — Homepage.
+/product — Product overview.
+/product/neat-assist — NEAT Assist.
+/product/neat-control — NEAT Control.
+/how-it-works — Four-stage workflow.
+/solutions — Solutions overview.
+/solutions/architects
+/solutions/bim-managers
+/solutions/interior-designers
+/solutions/engineers
+/resources — Resource index.
+/resources/design-workflows
+/resources/model-review
+/resources/approval-systems
+/about — NEAT philosophy.
+/demo — Interactive product demonstration.
+/contact — Contact and demo inquiry.
+/privacy — Privacy policy.
+/terms — Terms of use.
+All routes must contain actual original content.
+Do not create empty placeholder pages.
+Maintain the architectural technical design language across all pages.
+
+13. BACKEND ARCHITECTURE
+There are two levels of backend functionality.
+Level A — Public website backend
+This is mandatory.
+Implement real:
+- Demo inquiries.
+- Contact submissions.
+- Lead storage when configured.
+- Email notifications.
+- Input validation.
+- Spam protection.
+- Rate limiting.
+- Error handling.
+Use:
+Next.js Route Handlers.
+Zod.
+Resend or equivalent configured provider.
+Optional Supabase PostgreSQL.
+Secure environment variables.
+Do not fake successful email delivery.
+Inquiry fields
+Full name.
+Work email.
+Company or studio.
+Role.
+Current design software.
+Team size.
+Primary challenge.
+Message.
+Supported software options
+Revit.
+Rhino.
+ArchiCAD.
+SketchUp.
+Other.
+These are interest categories, not claims of supported live integrations.
+Level B — Future NEAT software platform
+Design the backend architecture for a real architectural intelligence product.
+Do not falsely claim it is implemented merely because the marketing site exists.
+Major services
+Identity and Access
+Organizations, users, roles, permissions, and project membership.
+Project Service
+Project records, models, versions, and review states.
+Model Ingestion
+Authorized IFC and other supported-format ingestion.
+Geometry and Context
+Model element data, properties, spatial relationships, and project metadata.
+Rules Engine
+Versioned configurable review rules.
+Observation Engine
+Structured findings with references to affected model elements.
+Recommendation Engine
+Contextual explanation and possible resolution strategies.
+Approval Engine
+Explicit review and authorization before proposed changes.
+Action Execution
+Future integration with approved design software adapters.
+Audit Service
+Event history, changes, approvals, and provenance.
+Knowledge System
+Approved project standards and versioned organizational preferences.
+Notifications
+Status changes, assigned reviews, and completed actions.
+Recommended storage
+PostgreSQL for relational records.
+Object storage for project files and artifacts.
+Redis or a managed queue for background jobs.
+Vector retrieval only if actually useful for approved document knowledge.
+Architecture principle
+Never let an AI model independently execute arbitrary model-changing actions.
+Require schema validation, authorization, review, and supported adapter execution.
+
+14. PRODUCT DATA MODEL
+Recommended entities:
+Organization
+User
+Project
+Model
+ModelVersion
+ModelElement
+RuleSet
+Rule
+Observation
+Recommendation
+Approval
+ActionRequest
+ExecutionResult
+AuditEvent
+KnowledgeDocument
+ReviewAssignment
+Notification
+Observation fields
+id
+project_id
+model_version_id
+element_ids
+rule_id
+title
+description
+severity
+confidence
+status
+source_reference
+created_at
+updated_at
+Approval fields
+id
+recommendation_id
+reviewer_id
+decision
+comments
+timestamp
+Execution result fields
+id
+action_request_id
+adapter_type
+status
+precondition_results
+change_summary
+rollback_reference
+error_detail
+timestamp
+Use migrations and strict access controls.
+Keep organization data isolated.
+
+15. ARCHITECTURAL SOFTWARE INTEGRATIONS
+Design adapter interfaces for potential future integrations.
+Examples:
+Revit.
+Rhino.
+ArchiCAD.
+SketchUp.
+IFC-compatible workflows.
+Do not claim native integrations exist without implementing and testing them.
+Revit
+If implemented, use an appropriately versioned Windows-side add-in and the Autodesk Revit API.
+Do not suggest that a browser alone can directly modify an open Revit model.
+Use authorized local or managed communication with the add-in.
+Respect Revit's threading and API execution requirements.
+Rhino
+If implemented, use supported Rhino or Rhino.Inside APIs as appropriate.
+ArchiCAD
+Use officially supported integration mechanisms and compatible SDK versions.
+SketchUp
+Use officially supported extension mechanisms and model APIs.
+IFC
+Use an appropriate IFC processing library with careful unit, geometry, and schema handling.
+Required security
+- Explicit user consent.
+- Role-based permissions.
+- Allowlisted operations.
+- Structured action payloads.
+- Preview before execution.
+- Version compatibility.
+- Full audit logs.
+- Failure recovery.
+- No unauthorized model edits.
+
+16. BUILDING-CODE SAFETY AND ACCURACY
+Architectural code compliance must be treated as jurisdiction-specific and context-sensitive.
+The website's sample issues are illustrative.
+Do not represent demo observations as definitive legal compliance findings.
+A real code-review engine must support:
+- Jurisdiction selection.
+- Applicable code edition.
+- Local amendments.
+- Building occupancy.
+- Construction type.
+- Project-specific assumptions.
+- Rule source references.
+- Versioned rule sets.
+- Human review.
+- Traceable findings.
+Do not fabricate citations to building-code provisions.
+Do not claim AI review replaces licensed architects, engineers, or authority-having-jurisdiction decisions.
+The interactive website can demonstrate a potential workflow without pretending to provide certified compliance assessment.
+
+17. CONTACT & DEMO SYSTEM
+Build a genuine contact page.
+Main headline
+LET'S MAKE
+DESIGN
+WORK
+SMARTER.
+Body
+Tell us how your team works today and which parts of the process are slowing you down.
+We'll explore how a more connected architectural intelligence workflow could help.
+Primary CTA
+REQUEST A DEMO
+Form fields
+Name.
+Email.
+Firm.
+Role.
+Design software.
+Project challenge.
+Message.
+Backend
+Use server-side validation, configured email delivery, and optionally persistent inquiry storage.
+Show a success message only when the actual submission has been accepted.
+If credentials are missing, report the configuration requirement instead of simulating a successful request.
+
+18. RESPONSIVE DESIGN
+Test:
+1920 × 1080.
+1440 × 900.
+1024 × 768.
+768 × 1024.
+390 × 844.
+375 × 812.
+Desktop
+Use complete drawing-based hero interaction.
+Pinned scroll sequences.
+Large editorial typography.
+Technical metadata.
+Complex layered floor-plan graphics.
+Tablet
+Maintain interactive drawing behavior.
+Reflow side panels.
+Scale floor plans proportionally.
+Maintain correct observation coordinates.
+Mobile
+Provide touch selection or accessible tap-to-inspect.
+Reduce excessive pinning.
+Keep text readable.
+Avoid horizontal overflow.
+Use a compact navigation system.
+Maintain drawing and marker alignment.
+Reduced motion
+Provide stable drawing states and click-through narrative progression without forced scroll animations.
+All content must remain accessible.
+
+19. PERFORMANCE
+Implement:
+- Optimized SVG drawings.
+- Lightweight interaction layers.
+- Deferred expensive effects.
+- Stable layout geometry.
+- Font optimization.
+- Lazy-loaded supporting imagery.
+- Animation cleanup.
+- Efficient pointer events.
+- Minimal layout thrashing.
+- Cached geometry calculations where appropriate.
+- Reduced-motion support.
+- Fast initial hero rendering.
+The original reference relies on carefully engineered 2D interactions rather than excessive 3D rendering.
+Preserve that philosophy.
+
+20. ACCESSIBILITY
+Implement:
+- Semantic heading hierarchy.
+- Accessible navigation.
+- Keyboard focus indicators.
+- Screen-reader descriptions for drawings.
+- Keyboard-operable issue selection.
+- Touch accessibility.
+- Reduced-motion support.
+- Clear form labels.
+- Appropriate contrast.
+- Accessible observation panels.
+- Correct modal focus management.
+- Screen-reader status announcements where needed.
+No essential content should depend exclusively on dragging.
+
+21. SEO
+Homepage title:
+NEAT | Intelligent Design Systems
+Meta description:
+NEAT is an architectural intelligence platform concept bringing contextual model review, intelligent design assistance, and controlled automation into the architecture workflow.
+Create:
+- Sitemap.
+- robots.txt.
+- Open Graph metadata.
+- Favicon.
+- Unique page titles.
+- Semantic markup.
+- Accurate product descriptions.
+- Canonical URLs once configured.
+Do not publish invented customer lists, usage metrics, certifications, or operating-company details.
+
+22. COMPONENT ARCHITECTURE
+Recommended directory structure:
+src/
+app/
+page.tsx
+layout.tsx
+globals.css
+product/
+page.tsx
+neat-assist/
+neat-control/
+how-it-works/
+solutions/
+resources/
+about/
+demo/
+contact/
+privacy/
+terms/
+api/
+inquiries/
+route.ts
+components/
+layout/
+Header.tsx
+Navigation.tsx
+Footer.tsx
+hero/
+  ArchitecturalInspectionHero.tsx
+  ArchitecturalDrawing.tsx
+  SelectionRectangle.tsx
+  ObservationMarker.tsx
+  ObservationPanel.tsx
+  TechnicalCoordinates.tsx
+
+sections/
+  ProblemStatements.tsx
+  DesignContext.tsx
+  WorkflowStory.tsx
+  InkTransformation.tsx
+  NEATAssist.tsx
+  NEATControl.tsx
+  UseCases.tsx
+  DesignerControl.tsx
+  FinalCTA.tsx
+
+motion/
+  ScrollDirector.tsx
+  DrawingReveal.tsx
+  TechnicalLine.tsx
+  InkMask.tsx
+  StateTransition.tsx
+
+demo/
+  DemoWorkspace.tsx
+  DemoObservationList.tsx
+  DemoApprovalPanel.tsx
+
+forms/
+  DemoInquiryForm.tsx
+content/
+homepage.ts
+product.ts
+solutions.ts
+resources.ts
+observations.ts
+lib/
+geometry.ts
+observations.ts
+validation.ts
+email.ts
+animation.ts
+public/
+drawings/
+images/
+logos/
+fonts/
+tests/
+docs/
+heron-reference-audit.md
+neat-design-system.md
+interaction-specification.md
+platform-architecture.md
+visual-comparison.md
+deployment.md
+Use this as a maintainable guide, not a reason to create empty files.
+
+23. VISUAL AND FUNCTIONAL TESTING
+Use Playwright.
+Hero tests
+Verify:
+1. Drawing loads.
+2. Selection rectangle follows pointer.
+3. Observations activate when intersected.
+4. Markers align at different viewport sizes.
+5. Reset works.
+6. Touch interactions work.
+7. Keyboard observation controls work.
+8. No invalid coordinate drift.
+9. Technical panels update correctly.
+10. Responsive resizing maintains layout.
+Scroll tests
+Verify:
+1. Four-state workflow.
+2. Correct sticky behavior.
+3. Forward progression.
+4. Reverse progression.
+5. Ink-mask transformation.
+6. Correct drawing-to-render alignment.
+7. No scroll jumps.
+8. No overlapping pinned sections.
+9. Reduced-motion fallback.
+10. Mobile interaction behavior.
+Product tests
+Verify:
+- NEAT Assist demo.
+- NEAT Control demo.
+- Observation selection.
+- Approval-state changes in the demonstration.
+- Navigation.
+- Secondary pages.
+- Contact form.
+- Actual backend response when configured.
+General checks
+TypeScript.
+ESLint.
+Production build.
+Accessibility testing.
+Visual screenshot comparison.
+Broken links.
+Console errors.
+Responsive testing.
+Do not claim successful completion without running the relevant checks.
+
+24. MANDATORY REFERENCE FIDELITY REVIEW
+Compare the finished NEAT site against:
+https://heronaiapp.com/
+Evaluate:
+- Architectural hero geometry.
+- Dragging behavior.
+- Marker positioning.
+- Technical annotation styling.
+- Main headline scale.
+- Background colors.
+- Typography.
+- Navigation.
+- Numbered editorial sections.
+- Floor plan presentation.
+- Four-stage demonstration.
+- Drawing-to-render transitions.
+- Product interface design.
+- Section spacing.
+- Use-case presentation.
+- Footer.
+- Mobile experience.
+The finished website must feel like the same caliber of architectural interactive design.
+Do not replace the source's visual mechanics with common dashboard cards or generic AI branding.
+
+25. GITHUB AND VERCEL DEPLOYMENT
+Create a new standalone repository:
+neat-studio-systems
+Do not modify unrelated repositories.
+When authorized GitHub and Vercel connections are available:
+1. Create repository.
+2. Commit complete application.
+3. Run validation checks.
+4. Create a new Vercel project.
+5. Configure environment variables.
+6. Deploy preview.
+7. Test interactive hero on deployed site.
+8. Test scroll transitions.
+9. Verify every route.
+10. Verify contact functionality.
+11. Test mobile.
+12. Check console errors.
+13. Provide actual verified preview URL.
+Do not claim the deployment is live until verified.
+Do not connect a production domain without authorization.
+
+26. COMPLETION DELIVERABLES
+The finished website must include:
+1. Original NEAT identity.
+2. Heron-inspired architectural design system.
+3. Full interactive drawing hero.
+4. Working drag-to-reveal inspection.
+5. Original observation data.
+6. Technical annotation panels.
+7. Numbered editorial problem statements.
+8. Interactive drawing layers.
+9. Four-stage scroll workflow.
+10. Real ink-mask transformation.
+11. NEAT Assist demonstration.
+12. NEAT Control demonstration.
+13. Architecture use cases.
+14. Human-approval philosophy.
+15. Final contact CTA.
+16. Complete footer.
+17. Responsive navigation.
+18. Functional secondary pages.
+19. Genuine demo/contact inquiry backend.
+20. Original or licensed visual assets.
+21. Scalable platform backend specification.
+22. Proper separation of live functionality and illustrative product concepts.
+23. Automated tests.
+24. Visual fidelity review.
+25. Production build.
+26. Verified Vercel preview when deployment access exists.
+
+27. FINAL NON-NEGOTIABLE CREATIVE DIRECTIVE
+The website reference is:
+https://heronaiapp.com/
+The new company is:
+NEAT
+The complete brand name is:
+NEAT — INTELLIGENT DESIGN SYSTEMS
+The primary tagline is:
+DESIGN FREELY. BUILD INTELLIGENTLY.
+The reference's actual interactive architectural hero must remain the foundation of the entire experience.
+Recreate the architectural drawing aesthetic.
+Recreate the drag-to-reveal interaction.
+Recreate the technical annotation behavior.
+Recreate the drawing-based scroll storytelling.
+Recreate the four-state workflow.
+Recreate the organic ink-mask transformation.
+Extend that same visual language through all new sections and secondary pages.
+Use the complete original NEAT homepage content provided in this specification.
+Do not copy Heron branding.
+Do not use generic AI illustrations.
+Do not substitute static screenshots for required interactions.
+Do not show fake customer performance or claim integrations that have not been implemented.
+Do not confuse an interactive marketing demonstration with a functioning BIM software integration.
+Do not stop after building the homepage scaffold.
+BUILD THE COMPLETE NEAT INTELLIGENT DESIGN SYSTEMS EXPERIENCE, INCLUDING THE INTERACTIVE WEBSITE, ORIGINAL CONTENT, WORKING INQUIRY INFRASTRUCTURE, PRODUCTION TESTING, AND DEPLOYMENT-READY SOURCE CODE.
+
+
+
+
+Use this in Codex: Create a new project named neat-studio-systems, paste the complete prompt above, and provide the Heron website as the required design reference.
+The name NEAT is now used throughout the prompt—including both products, NEAT Assist and NEAT Control. All the page copy is included, so you won't have to manually replace VELORA or supply missing sections.

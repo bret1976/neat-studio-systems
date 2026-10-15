@@ -1,0 +1,11 @@
+# Deployment and verification
+
+Dedicated standalone project: neat-studio-systems. GitHub account bret1976; Vercel team brets-projects-1715089a. Vercel project prj_r38yagPihhp8tBwQGalaCHRD8YSQ. No unrelated project or production domain is modified.
+
+Local verification: Next.js production build, ESLint and TypeScript pass. Three backend unit tests pass: schema/spam bounds, provider message-ID acknowledgement and durable limiter fail-closed behavior. Production dependency audit reports zero known vulnerabilities as of 15 October 2026. Full browser matrix: 30 passed, five scoped duplicate route/API checks skipped across seven projects (1920×1080, 1440×900, 1024×768, 768×1024, 390×844, 375×812 and iPhone-sized WebKit). WCAG A/AA automated checks found zero violations in tested contact and reduced-motion homepage states. Browser tests cover hero selection/persistence/reset/keyboard/touch, forward/reverse workflow, manual ink control, product alternatives/approvals/history, all secondary routes, assets, API errors and overflow. Deployment URL and live-check results are added after deployment verification.
+
+The public inquiry endpoint is implemented but deliberately unconfigured. No live email delivery or persistent lead database is claimed. Browser/API tests require valid submissions to return 503 until credentials are configured. Rate limiting needs Upstash-compatible REST credentials; email needs Resend credentials and verified sender/recipient. No production domain is attached; unset NEXT_PUBLIC_SITE_URL keeps metadata noindex and robots disallow.
+
+Authenticated protected-preview tests read a project-specific short-lived development OIDC token from ignored .env.local and only attach it to the verified deployment origin. API requests are limited to same-origin paths and do not follow redirects; browser interception scopes the header to the same origin. Traces are disabled for these authenticated runs. Tokens/env files never enter source control, deployment uploads or archives. Protected preview access rules are preserved.
+
+Limitations: no physical iPhone test, no certified building-code review, no BIM integration, no full AI platform, no proprietary source font or illustration reproduction. Visual differences are documented separately. Original asset inventory and full run/configuration instructions are included.

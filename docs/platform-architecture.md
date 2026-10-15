@@ -1,0 +1,25 @@
+# Future NEAT platform architecture — specification, not deployed software
+
+## Implemented website boundary
+
+Next.js static marketing routes, browser-local interactive models and product demos; Node Route Handler for schema-validated inquiries with optional configured Resend delivery and required managed Redis rate limiting. No model ingestion, software adapters, accounts, approvals database or AI reasoning service is implemented. Email provider acceptance is required for an inquiry success. No lead database is claimed; email retention is provider/operator controlled. Optional future lead storage can be added with a migration, retention policy and explicit configuration.
+
+## Proposed service boundaries
+
+Identity/Access handles organizations, users, roles and project membership. Project Service versions projects and model review states. Model Ingestion stores authorized IFC artifacts in object storage, validates formats and units, and enqueues background parsing. Geometry/Context extracts element IDs, properties and spatial relationships. Rules Engine versions configured criteria with provenance. Observation Engine attaches findings to model versions/elements. Recommendation Engine produces bounded alternatives and explanations. Approval Engine scopes a human decision to a proposal and model version. Action Execution sends allowlisted structured requests to a supported adapter after revalidating permissions/preconditions. Audit Service retains events, outcomes and rollback references. Knowledge System manages approved/versioned organizational standards; Notifications delivers review assignments and outcomes.
+
+PostgreSQL stores relationships; object storage holds originals and derived artifacts; managed queue/Redis handles jobs and idempotency. Vector retrieval is optional for approved reference documents and is not a default requirement. Every API authenticates org membership, enforces project roles, and scopes database access by organization. Background jobs run with least privilege. No direct model-generated SQL or arbitrary executable actions.
+
+## Proposed relational data model
+
+Organization(id,name); User(id,identity_subject); Membership(organization_id,user_id,role); Project(id,organization_id,name); ProjectMembership(project_id,user_id,role); Model(id,project_id); ModelVersion(id,model_id,artifact_key,checksum,unit_system,status); ModelElement(id,model_version_id,external_id,properties,geometry_reference); RuleSet(id,organization_id,version,jurisdiction,adopted_edition,amendments); Rule(id,rule_set_id,source_reference,criteria); Observation(id,project_id,model_version_id,element_ids,rule_id,title,description,severity,confidence,status,source_reference,created_at,updated_at); Recommendation(id,observation_id,proposal,affected_elements,preconditions); Approval(id,recommendation_id,reviewer_id,decision,comments,timestamp); ActionRequest(id,approval_id,adapter_type,allowlisted_operation,payload,idempotency_key); ExecutionResult(id,action_request_id,adapter_type,status,precondition_results,change_summary,rollback_reference,error_detail,timestamp); AuditEvent(id,organization_id,actor_id,entity_id,event,payload,timestamp); KnowledgeDocument(id,organization_id,version,artifact_key,approval_status); ReviewAssignment(id,observation_id,user_id); Notification(id,user_id,event_id,status).
+
+Migrations must create non-null org/project keys, foreign keys, unique external IDs per model version, indexes on membership/observation status, and row-level tenant policies. They are not run as part of this website. Scope approvals to immutable recommendation/model-version hashes. Store rejected decisions as well as approved ones. Recheck all preconditions before action execution; stale versions require fresh authorization. Capture provider execution failure and verified rollback/recovery references, never imply a rollback exists without adapter support.
+
+## Adapter design
+
+An adapter exposes capabilities(version), inspect(modelVersion,elementIds), preview(structuredAction), validatePreconditions(action), execute(approvalId,action), and result/status. Revit requires an appropriately versioned Windows-side add-in and supported Revit API execution/threading; a browser alone cannot alter an open model. Rhino/Rhino.Inside, ArchiCAD and SketchUp require official supported APIs/SDKs and compatible versions. IFC processing needs schema/unit/geometry validation. Every connection requires explicit consent, authenticated local/managed communication, allowlisted operations, audit records and failure recovery. These adapters do not exist in this website.
+
+## Compliance context
+
+A real rules engine requires jurisdiction, adopted code edition, local amendments, occupancy, construction type, project assumptions and source/version references. Findings need qualified professional review and applicable authority decisions. The demo invents no code citations and provides no certified assessment. AI never executes arbitrary model changes independently.
