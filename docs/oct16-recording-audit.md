@@ -32,3 +32,11 @@ Production build, ESLint, TypeScript and three backend checks passed. Desktop/ta
 ## Deployed verification
 
 Preview: https://neat-studio-systems-hskkf2a8z-brets-projects-1715089a.vercel.app/ . Runtime ccef017, deployment dpl_DiWbynn9JgiC6AKVWJ7aSBuqSK5e. Vercel inspect: Ready / preview. All 36 live desktop/mobile browser checks passed. These verify functional motion/state transitions and responsive controls; they do not establish pixel-perfect visual parity or physical-device performance.
+
+## Full-sequence follow-up
+
+Reviewed the recording again alongside actual wheel-driven live-reference states. The earlier pass implemented wall convergence but omitted the changing lower-left introduction card and individual plan findings. The original landscape plan also occupied the right copy column. This revision uses an original portrait courtyard plan (scripts/context-plan.py), with matching assembly fragments; narration changes with scroll, collapses to a selection prompt, and three markers open/close contextual findings. A short clock interlude is scroll-scrubbed. Reversing scroll restores earlier assembly/narration states.
+
+The live use-case images change on selection (hover alone did not change the source selection in the observed session). NEAT now synchronizes its exclusive role accordion with crossfading original artwork and supports the same interaction through touch and keyboard. Existing original studies are reused: these are not eight reproductions of Heron's role illustrations. Hero findings now remain anchored to their discovered drawing regions instead of displaying only the last finding at a fixed upper-right position.
+
+Source evidence: output/reference/recheck-*, sequence-*, and the existing October 16 sampled recording frames. New NEAT captures: output/playwright/final-followup-*. Browser emulation is not physical-device testing. Exact source illustrations, proprietary font and source content remain different, and this follow-up does not establish complete visual parity.

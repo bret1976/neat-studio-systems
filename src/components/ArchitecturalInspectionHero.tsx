@@ -109,6 +109,23 @@ export function ArchitecturalInspectionHero({
               <span>{String(i + 1).padStart(2, "0")}</span>
             </button>
           ))}
+          {observations
+            .filter((o) => found.includes(o.id))
+            .map((o, i) => (
+              <div
+                key={o.id}
+                className="inspection-callout anchored-callout"
+                aria-hidden="true"
+                style={{
+                  left: `${Math.min(74, Math.max(1, o.region.x * 100 - (i % 2 ? 8 : 0)))}%`,
+                  top: `${Math.max(4, o.region.y * 100 - 19)}%`,
+                }}
+              >
+                <span className="mono">{o.title}</span>
+                <p>{o.description}</p>
+                <small>ILLUSTRATIVE / HUMAN REVIEW REQUIRED</small>
+              </div>
+            ))}
           {pointing && (
             <span
               className="inspection-pointer mono"
@@ -137,13 +154,6 @@ export function ArchitecturalInspectionHero({
             />
           )}
         </div>
-        {active && (
-          <div className="inspection-callout" aria-hidden="true">
-            <span className="mono">{active.title}</span>
-            <p>{active.description}</p>
-            <small>ILLUSTRATIVE / HUMAN REVIEW REQUIRED</small>
-          </div>
-        )}
         <div className="field-bottom mono">
           <span>
             MODEL 001 / RESIDENTIAL STUDY

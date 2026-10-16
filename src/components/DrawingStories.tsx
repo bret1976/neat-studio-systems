@@ -7,6 +7,7 @@ import { useDrawingStages } from "./useDrawingStages";
 import { WorkflowModel } from "./WorkflowModel";
 gsap.registerPlugin(ScrollTrigger);
 import { PlanModel } from "./PlanModel";
+import { ContextNarrative } from "./ContextNarrative";
 export { PlanModel } from "./PlanModel";
 export function DesignContext() {
   const root = useRef<HTMLElement>(null);
@@ -44,6 +45,7 @@ export function DesignContext() {
             </span>
           </span>
           <PlanModel layer={layer} assembly />
+          <ContextNarrative layer={layer} />
           <div className="context-flow-copy">
             <span className="mono">INTELLIGENCE WITH CONTEXT</span>
             <h3>

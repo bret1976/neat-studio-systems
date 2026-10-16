@@ -1,7 +1,7 @@
 import { ClosingStudy } from "@/components/ClosingStudy";
 import Link from "next/link";
 import { DesignerControl } from "@/components/DesignerControl";
-import Image from "next/image";
+import { AudienceStudy } from "@/components/AudienceStudy";
 import { ArchitecturalInspectionHero } from "@/components/ArchitecturalInspectionHero";
 import { DesignContext, InkTransformation } from "@/components/DrawingStories";
 import { EditorialLead } from "@/components/EditorialLead";
@@ -14,7 +14,6 @@ import {
   problems,
   assistCapabilities,
   controlCapabilities,
-  audiences,
   principles,
 } from "@/content/site";
 function Label({
@@ -190,42 +189,7 @@ export default function Home() {
             ONE CONNECTED DESIGN PROCESS.
           </span>
         </div>
-        <div className="audience-editorial">
-          <div className="audience-image ruled">
-            <Image
-              src="/images/north-court-render.webp"
-              width={1800}
-              height={1200}
-              alt="Original North Court architectural study, shared by the NEAT design team"
-              sizes="(max-width:760px) 100vw,50vw"
-            />
-            <span className="mono">
-              NORTH COURT / DESIGN STUDY
-              <br />
-              ONE CONNECTED DESIGN PROCESS.
-            </span>
-          </div>
-          <div className="audience-list">
-            {audiences.map(([t, d, s], i) => (
-              <details key={t} name="neat-audiences" open={i === 0}>
-                <summary>
-                  <span className="mono">0{i + 1}</span>
-                  {t}
-                  <b>+</b>
-                </summary>
-                <div>
-                  <p>{d}</p>
-                  <Link
-                    className="technical-link"
-                    href={s ? `/solutions/${s}` : "/solutions#design-teams"}
-                  >
-                    EXPLORE <span>↗</span>
-                  </Link>
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
+        <AudienceStudy />
       </section>
       <details className="extended-study" id="philosophy">
         <summary>

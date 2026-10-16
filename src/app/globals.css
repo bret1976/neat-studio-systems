@@ -5654,3 +5654,373 @@ section {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+/* Full reference sequence follow-up: selected role plates, changing plan narration,
+   clock interlude and individually actionable review markers. */
+.audience-image {
+  position: relative;
+}
+.audience-plate {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.035);
+  transition:
+    opacity 0.45s ease,
+    transform 0.65s ease,
+    visibility 0.45s;
+}
+.audience-plate.active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.audience-plate img {
+  width: 100%;
+  height: 100%;
+}
+.audience-plate:has(img[src$="svg"]) img {
+  object-fit: contain;
+  padding: 35px;
+}
+.audience-drafting-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 35px;
+}
+.audience-image > .mono {
+  z-index: 2;
+  background: var(--paper);
+  padding: 6px;
+}
+.audience-list details[open] summary {
+  color: var(--ink);
+}
+.audience-list details:not([open]) summary {
+  color: var(--muted);
+}
+.audience-list summary:hover {
+  color: var(--ink);
+  background: #28282805;
+}
+.context-introduction {
+  position: absolute;
+  bottom: 26px;
+  left: 25px;
+  z-index: 6;
+  width: 235px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 0 5px var(--ink);
+  opacity: clamp(0, calc((var(--scene-progress, 0) - 0.24) * 18), 1);
+}
+.context-introduction > span {
+  display: block;
+  padding: 9px 10px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 9px;
+}
+.context-intro-states {
+  display: grid;
+  padding: 12px 10px;
+}
+.context-intro-states p {
+  grid-area: 1/1;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.25;
+}
+.context-intro-a {
+  opacity: clamp(0, calc((0.46 - var(--scene-progress, 0)) * 24), 1);
+}
+.context-intro-b {
+  opacity: clamp(
+    0,
+    min(
+      calc((var(--scene-progress, 0) - 0.46) * 24),
+      calc((0.62 - var(--scene-progress, 0)) * 24)
+    ),
+    1
+  );
+}
+.context-intro-c {
+  opacity: clamp(0, calc((var(--scene-progress, 0) - 0.62) * 24), 1);
+}
+.context-introduction > small {
+  display: block;
+  padding: 0 10px 12px;
+  font-size: 8px;
+  color: var(--muted);
+}
+.context-clock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(33vw, 330px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  opacity: clamp(
+    0,
+    min(
+      calc((var(--scene-progress, 0) - 0.185) * 50),
+      calc((0.255 - var(--scene-progress, 0)) * 50)
+    ),
+    1
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+.context-clock svg {
+  width: 100%;
+  height: 100%;
+}
+.clock-hour,
+.clock-minute {
+  transform-origin: 100px 100px;
+}
+.clock-hour {
+  transform: rotate(calc(var(--scene-progress, 0) * 600deg));
+}
+.clock-minute {
+  transform: rotate(calc(var(--scene-progress, 0) * 3600deg));
+}
+.context-findings {
+  position: absolute;
+  width: min(70%, 1000px);
+  aspect-ratio: 10/7;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  transform: translate(
+      calc(
+        -50% - clamp(0, calc((var(--scene-progress, 0) - 0.66) * 3), 1) * 30%
+      ),
+      -50%
+    )
+    scale(calc(0.9 + var(--scene-progress, 0) * 0.15));
+  pointer-events: none;
+  opacity: clamp(0, calc((var(--scene-progress, 0) - 0.72) * 18), 1);
+  visibility: hidden;
+}
+.context-findings:has(.selected) {
+  z-index: 8;
+}
+.context-finding {
+  position: absolute;
+  pointer-events: auto;
+}
+.context-finding-0 {
+  left: 35%;
+  top: 31%;
+}
+.context-finding-1 {
+  left: 65%;
+  top: 37%;
+}
+.context-finding-2 {
+  left: 76%;
+  top: 68%;
+}
+.context-finding > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 32px;
+  min-height: 32px;
+  background: var(--red);
+  color: var(--paper);
+  padding: 6px;
+  font: 9px var(--mono);
+  box-shadow: 0 2px var(--ink);
+}
+.context-finding > button:hover,
+.context-finding > button:focus-visible {
+  background: var(--ink);
+}
+.context-finding-detail {
+  width: 230px;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  padding: 12px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 0 5px var(--ink);
+}
+.context-finding-detail > .mono {
+  color: var(--red);
+  font-size: 10px;
+}
+.context-finding-detail p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+.context-finding-detail small {
+  display: block;
+  font-size: 12px;
+}
+.context-finding-detail b {
+  display: block;
+  margin: 12px 0;
+  font-size: 8px;
+  font-weight: 400;
+}
+.context-finding-detail > button {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+  font: 9px var(--mono);
+  width: 100%;
+  text-align: right;
+}
+.context-finding-2 .context-finding-detail {
+  left: auto;
+  right: 0;
+}
+.context-story .context-note {
+  display: none;
+}
+@media (max-width: 760px) {
+  .context-introduction {
+    left: 15px;
+    bottom: 65px;
+    width: 185px;
+  }
+  .context-intro-states p {
+    font-size: 11px;
+  }
+  .context-intro-states {
+    padding: 8px;
+  }
+  .context-introduction > span {
+    font-size: 8px;
+    padding: 7px 8px;
+  }
+  .context-introduction > small {
+    font-size: 7px;
+    padding: 0 8px 8px;
+  }
+  .context-clock {
+    width: 160px;
+    top: 42%;
+  }
+  .context-findings {
+    width: 100%;
+    top: 45%;
+    transform: translate(-50%, -50%)
+      scale(calc(0.85 + var(--scene-progress, 0) * 0.15));
+  }
+  .context-finding-detail {
+    width: 175px;
+  }
+  .context-finding-1 .context-finding-detail {
+    left: auto;
+    right: 0;
+  }
+  .audience-plate:has(img[src$="svg"]) img,
+  .audience-drafting-overlay {
+    padding: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .context-clock {
+    display: none;
+  }
+  .context-introduction {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 15px;
+    opacity: 1;
+    width: auto;
+  }
+  .context-intro-states p {
+    opacity: 1;
+    grid-area: auto;
+    margin-bottom: 10px;
+  }
+  .context-findings {
+    opacity: 1;
+    visibility: visible;
+    top: 35%;
+    transform: translate(-50%, -50%);
+  }
+  .context-story .context-note {
+    display: grid;
+  }
+}
+.context-finding-0 {
+  left: 28%;
+  top: 33%;
+}
+.context-finding-1 {
+  left: 43%;
+  top: 66%;
+}
+.context-finding-2 {
+  left: 69%;
+  top: 49%;
+}
+.context-story .context-flow-copy {
+  left: 66%;
+}
+.context-introduction[data-stage="4"] .context-intro-states {
+  display: none;
+}
+.context-introduction[data-stage="4"] > small {
+  padding-top: 10px;
+}
+.inspection-hero .anchored-callout {
+  right: auto;
+  width: 205px;
+  z-index: 7;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: 0 4px var(--ink);
+}
+.inspection-hero .anchored-callout > .mono {
+  font-size: 8px;
+}
+.inspection-hero .anchored-callout p {
+  font-size: 11px;
+  line-height: 1.2;
+}
+.inspection-hero .anchored-callout::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 100%;
+  height: 22px;
+  border-left: 1px solid var(--red);
+}
+@media (max-width: 760px) {
+  .context-story .layer-controls {
+    bottom: 15px;
+  }
+  .inspection-hero .anchored-callout {
+    width: 145px;
+    max-width: 43%;
+  }
+  .inspection-hero .anchored-callout p {
+    font-size: 8px;
+    padding: 5px;
+  }
+  .inspection-hero .anchored-callout small {
+    display: none;
+  }
+}
+.context-finding.selected {
+  z-index: 2;
+}
+.audience-list details[open] summary b {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .context-story .context-flow-copy {
+    left: auto;
+  }
+}

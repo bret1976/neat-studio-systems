@@ -1,16 +1,24 @@
 import Image from "next/image";
 export function ArchitecturalDrawing({
   plan = false,
+  context = false,
   className = "",
   eager = false,
 }: {
   plan?: boolean;
+  context?: boolean;
   className?: string;
   eager?: boolean;
 }) {
   return (
     <Image
-      src={plan ? "/drawings/plan.svg" : "/drawings/elevation.svg"}
+      src={
+        context
+          ? "/drawings/context-plan.svg"
+          : plan
+            ? "/drawings/plan.svg"
+            : "/drawings/elevation.svg"
+      }
       width={plan ? 1000 : 1200}
       height={700}
       alt={
