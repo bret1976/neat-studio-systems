@@ -21,3 +21,15 @@ Reference: user-supplied `Screen Recording 2026-10-15 at 11.03.24 AM.mov`, 131.3
 ## Verification scope
 
 Production build, lint, TypeScript, backend validation, seven-size/engine browser matrix, route-transition/filter/morph tests and representative desktop/mobile visual captures. The checks establish working behavior and responsive reachability; they do not establish pixel-perfect or frame-perfect parity. No physical iPhone test or live BIM/AI service is claimed.
+
+## Structural correction after the second user review
+
+The first follow-up overstated fidelity: the product order was corrected, but its homepage compositions were still full workspaces; workflow stages still swapped inside a fixed canvas. Those are material differences visible at 00:40–00:48, not merely artwork or timing differences.
+
+This revision replaces the homepage workspaces with three-column product studies and local approval previews, preserving the full workspaces on product/demo routes. The four homepage workflow scenes are now independent vertically travelling panels with alternating drawing/bar positions and shared explicit-approval state. The dedicated How It Works page retains the brief's controllable pinned model.
+
+Other corrections: progressive tower shading, scroll-linked word opacity, original axonometric problem diagrams, working software-interest carousel arrows, hide-on-down/show-on-up navigation, full-screen context-plan composition, pointer coordinate readout, compact initial inspection controls, longer measured drawing-first opening, original dimensional footer monogram with face hover, two-row footer grid, centered closing CTA, and exclusive use-case disclosure. Product detail pages now have split interface-preview heroes, feature tours, three-step content, FAQs and closing drawings; About pairs original portal art with the approved editorial content.
+
+New live research captures: `output/reference/second-pass-*.png`, including matched 1440×900 desktop and fresh 390×844 mobile reference captures. The reference scroll container is `.main-inner`, not window; native wheel interactions were used after dismissing its consent banner. Some headed mobile captures timed out, so a fresh headless mobile context was used successfully. No reference consent UI was added to NEAT because the rebuild does not add optional analytics/tracking.
+
+Original architectural assets, the NEAT wordmark, approved section copy, and product-demo boundaries remain intentionally different. The source's pricing/staff/partner content is not adopted. Exact proprietary illustration geometry, typeface and source easing are not claimed. This remains a rebrand with original media, not a pixel-perfect duplicate.

@@ -18,3 +18,7 @@ Create one original photorealistic architectural visualization for an architectu
 ## Rights and limitations
 
 Reference site, case-study media and recording are audit evidence only, excluded from deployment. The user's uploaded source serves as reference data; no Heron scripts, product branding, photographs, diagrams or trademarks are embedded. Generated image is original illustrative content; no real-world ownership, performance or software availability claim accompanies it. Fine geometry in the generated visualization is not a construction drawing.
+
+## Second recording pass
+
+`elevation.svg` now includes original directional facade shadows and a clipped procedural charcoal texture. Original React/SVG geometry adds four architectural problem diagrams, an arched portal study and a dimensional NEAT monogram. Tower outlines and shading use the same original SVG with a code-driven filter and scroll mask. No new generated bitmap or third-party reference artwork was added.

@@ -1,3 +1,7 @@
+import { ProductPreview } from "@/components/ProductPreview";
+import { SoftwareStrip } from "@/components/SoftwareStrip";
+import { SecondaryClosing } from "@/components/SecondaryClosing";
+import { ArchitecturalPortal } from "@/components/ArchitecturalPortal";
 import { ProductTour } from "@/components/ProductTour";
 import { ResourceLibrary } from "@/components/ResourceLibrary";
 import { AboutIdentity } from "@/components/AboutIdentity";
@@ -28,24 +32,50 @@ export default async function ContentPage({
   const { slug } = await params;
   const page = pages[slug.join("/")];
   if (!page) notFound();
+  const productPage = page.kind === "assist" || page.kind === "control";
+  const aboutPage = slug.join("/") === "about";
   return (
     <>
-      <section>
+      <section
+        className={
+          productPage
+            ? "product-detail-page"
+            : aboutPage
+              ? "about-detail-page"
+              : undefined
+        }
+      >
         <div className="section-label">
           <span>{page.label}</span>
           <Link href="/">INDEX / 001 ↗</Link>
         </div>
         {slug.join("/") === "about" && <AboutIdentity />}
-        <div className="page-intro">
-          <h1>{page.title}</h1>
-          <div>
-            <p>{page.intro}</p>
-            <p className="mono">
-              PROPOSED PLATFORM / INTERACTIVE DEMONSTRATION
-            </p>
+        <div className={productPage ? "product-page-hero" : "page-intro"}>
+          <div
+            className={productPage ? "product-page-copy" : "page-intro-copy"}
+          >
+            <h1>{page.title}</h1>
+            <div>
+              <p>{page.intro}</p>
+              <p className="mono">
+                PROPOSED PLATFORM / INTERACTIVE DEMONSTRATION
+              </p>
+            </div>
           </div>
+          {productPage && <ProductPreview control={page.kind === "control"} />}
         </div>
+        {productPage && <SoftwareStrip />}
         <div className="page-content">
+          {productPage && (
+            <div className="product-feature-heading">
+              <span className="mono">KEY FEATURES</span>
+              <h2>
+                YOUR DESIGN.
+                <br />
+                YOUR CONTROL.
+              </h2>
+            </div>
+          )}
           {page.kind === "assist" ? (
             <ProductTour />
           ) : page.kind === "control" ? (
@@ -53,11 +83,12 @@ export default async function ContentPage({
           ) : page.kind === "resources" ? (
             <ResourceLibrary />
           ) : (
-            !["workflow", "demo", "legal"].includes(page.kind || "") && (
-              <ArchitecturalDrawing
-                plan={page.kind === "solutions"}
-              />
-            )
+            !["workflow", "demo", "legal"].includes(page.kind || "") &&
+            (aboutPage ? (
+              <ArchitecturalPortal />
+            ) : (
+              <ArchitecturalDrawing plan={page.kind === "solutions"} />
+            ))
           )}
           <div
             className={`page-blocks ${page.kind === "legal" ? "legal-blocks" : ""}`}
@@ -93,7 +124,7 @@ export default async function ContentPage({
               ))}
             </div>
           )}
-          {page.kind === "resources" && (
+          {(page.kind === "resources" || productPage) && (
             <div className="faq" id="faq">
               <h2>FREQUENTLY ASKED QUESTIONS.</h2>
               {[
@@ -128,6 +159,9 @@ export default async function ContentPage({
           )}
         </div>
       </section>
+      {(productPage || page.kind === "resources" || aboutPage) && (
+        <SecondaryClosing />
+      )}
       {page.kind === "workflow" && <WorkflowStory />}
       {page.kind === "demo" && (
         <>

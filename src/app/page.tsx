@@ -2,12 +2,13 @@ import Link from "next/link";
 import { DesignerControl } from "@/components/DesignerControl";
 import Image from "next/image";
 import { ArchitecturalInspectionHero } from "@/components/ArchitecturalInspectionHero";
-import {
-  DesignContext,
-  WorkflowStory,
-  InkTransformation,
-} from "@/components/DrawingStories";
-import { DemoWorkspace } from "@/components/DemoWorkspace";
+import { DesignContext, InkTransformation } from "@/components/DrawingStories";
+import { EditorialLead } from "@/components/EditorialLead";
+import { SoftwareStrip } from "@/components/SoftwareStrip";
+import { ProductPreview } from "@/components/ProductPreview";
+import { TowerStudy } from "@/components/TowerStudy";
+import { ProblemDiagram } from "@/components/ProblemDiagram";
+import { WorkflowJourney } from "@/components/WorkflowJourney";
 import {
   problems,
   assistCapabilities,
@@ -54,32 +55,9 @@ export default function Home() {
       <section className="problem-section" id="design-bottleneck">
         <Label index="02">THE DESIGN BOTTLENECK</Label>
         <div className="problem-intro">
-          <div className="tower-drawing ruled">
-            <Image
-              className="tower-image"
-              src="/drawings/tower.svg"
-              width={1000}
-              height={1100}
-              alt="Original axonometric tower study with a structural facade grid and ground-level podium"
-              unoptimized
-            />
-            <span className="red-circle" aria-hidden="true" />
-            <span className="mono">
-              NORTH COURT / DESIGN STUDY
-              <br />
-              PRECISION WITHOUT REPETITION.
-            </span>
-          </div>
-          <div className="problem-copy" data-reveal>
-            <h2>
-              YOUR SOFTWARE
-              <br />
-              IS POWERFUL.
-              <br />
-              <span className="muted">
-                WHY DOES EVERY DETAIL STILL DEPEND ON YOU?
-              </span>
-            </h2>
+          <TowerStudy />
+          <div className="problem-copy">
+            <EditorialLead />
             <p>
               Modern architecture software can model remarkable buildings. But
               the work surrounding the design still demands countless manual
@@ -95,16 +73,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="software-strip mono">
-          <span>
-            SOFTWARE INTERESTS
-            <br />
-            <small>FUTURE ADAPTERS / NOT LIVE INTEGRATIONS</small>
-          </span>
-          {["REVIT", "RHINO", "ARCHICAD", "SKETCHUP", "IFC"].map((s) => (
-            <span key={s}>⌑ {s}</span>
-          ))}
-        </div>
+        <SoftwareStrip />
         <div
           className="problem-grid"
           tabIndex={0}
@@ -113,15 +82,7 @@ export default function Home() {
         >
           {problems.map(([t, h, b], i) => (
             <article key={t}>
-              <div
-                className={`problem-diagram diagram-${i}`}
-                aria-hidden="true"
-              >
-                <span />
-                <span />
-                <span />
-                <b>0{i + 1}</b>
-              </div>
+              <ProblemDiagram index={i} />
               <span className="mono">
                 {String(i + 1).padStart(2, "0")} / {t}
               </span>
@@ -137,7 +98,7 @@ export default function Home() {
         </div>
       </section>
       <DesignContext />
-      <section className="product-section" id="neat-assist">
+      <section className="product-section product-row" id="neat-assist">
         <Label index="04">PRODUCT 01 / NEAT ASSIST</Label>
         <div className="section-heading">
           <h2>
@@ -158,7 +119,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <DemoWorkspace />
+        <ProductPreview />
         <div className="product-bottom">
           <Capabilities items={assistCapabilities} />
           <Link href="/product/neat-assist" className="technical-link">
@@ -166,7 +127,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <section className="product-section" id="neat-control">
+      <section className="product-section product-row" id="neat-control">
         <Label index="05">PRODUCT 02 / NEAT CONTROL</Label>
         <div className="section-heading">
           <h2>
@@ -181,7 +142,7 @@ export default function Home() {
             details into focus without losing sight of the overall project.
           </p>
         </div>
-        <DemoWorkspace control />
+        <ProductPreview control />
         <div className="product-bottom">
           <Capabilities items={controlCapabilities} />
           <Link href="/product/neat-control" className="technical-link">
@@ -189,7 +150,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <WorkflowStory />
+      <WorkflowJourney />
       <section className="transformation-section" id="drawing-to-design">
         <Label index="07">FROM ANALYSIS TO POSSIBILITY</Label>
         <div className="section-heading">
@@ -240,7 +201,7 @@ export default function Home() {
           </div>
           <div className="audience-list">
             {audiences.map(([t, d, s], i) => (
-              <details key={t} open={i === 0}>
+              <details key={t} name="neat-audiences" open={i === 0}>
                 <summary>
                   <span className="mono">0{i + 1}</span>
                   {t}
@@ -312,11 +273,9 @@ export default function Home() {
         <div className="cta-layout">
           <div>
             <h2>
-              LET THE
+              LET THE DESIGN
               <br />
-              DESIGN MOVE
-              <br />
-              FORWARD.
+              MOVE FORWARD.
             </h2>
             <span className="mono">
               YOUR NEXT PROJECT DESERVES A CLEARER WORKFLOW.

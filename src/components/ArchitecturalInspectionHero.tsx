@@ -22,6 +22,7 @@ export function ArchitecturalInspectionHero({
   const [box, setBox] = useState<Region | null>(null);
   const [found, setFound] = useState<string[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
+  const [pointing, setPointing] = useState(false);
   const [coords, setCoords] = useState<Point>({ x: 0, y: 0 });
   const active = observations.find((o) => o.id === selected);
   function update(e: PointerEvent<HTMLDivElement>) {
@@ -66,6 +67,7 @@ export function ArchitecturalInspectionHero({
     <section
       className={`inspection-hero ${compact ? "compact" : ""}`}
       id="inspection"
+      data-inspection-active={!!active}
     >
       {!compact && <DrawingOpening />}
       <div className="drawing-field ruled">
@@ -78,6 +80,8 @@ export function ArchitecturalInspectionHero({
         <div
           className="inspection-canvas"
           ref={canvas}
+          onPointerEnter={() => setPointing(true)}
+          onPointerLeave={() => setPointing(false)}
           onPointerDown={down}
           onPointerMove={update}
           onPointerUp={end}
@@ -86,6 +90,8 @@ export function ArchitecturalInspectionHero({
           aria-label="Interactive architectural inspection drawing. Drag to discover observations, or use the observation buttons below."
         >
           <ArchitecturalDrawing eager />
+          <span className="drawing-ruler ruler-top" aria-hidden="true" />
+          <span className="drawing-ruler ruler-side" aria-hidden="true" />
           {observations.map((o, i) => (
             <button
               key={o.id}
@@ -103,6 +109,16 @@ export function ArchitecturalInspectionHero({
               <span>{String(i + 1).padStart(2, "0")}</span>
             </button>
           ))}
+          {pointing && (
+            <span
+              className="inspection-pointer mono"
+              style={{ left: `${coords.x * 100}%`, top: `${coords.y * 100}%` }}
+              aria-hidden="true"
+            >
+              X {Math.round(coords.x * 1200)}
+              <br />Y {Math.round(coords.y * 700)}
+            </span>
+          )}
           {box && (
             <div
               className="selection-rectangle"

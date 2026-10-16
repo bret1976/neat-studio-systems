@@ -34,6 +34,22 @@ export function Header() {
       document.removeEventListener("keydown", escape);
     };
   }, []);
+  useEffect(() => {
+    let previous = scrollY;
+    const scroll = () => {
+      const current = scrollY;
+      if (Math.abs(current - previous) < 4) return;
+      const hasFocus = root.current?.contains(document.activeElement);
+      root.current?.classList.toggle(
+        "header-away",
+        current > 300 && current > previous && !mobile && !open && !hasFocus,
+      );
+      previous = current;
+    };
+    addEventListener("scroll", scroll, { passive: true });
+    root.current?.classList.remove("header-away");
+    return () => removeEventListener("scroll", scroll);
+  }, [pathname, mobile, open]);
   return (
     <header className="header" ref={root}>
       <Link
@@ -84,7 +100,15 @@ export function Header() {
               }}
               aria-expanded={open === name}
               aria-controls={`nav-${name}`}
-              onClick={(e) => setOpen(e.detail > 0 && matchMedia("(pointer: fine)").matches ? name : open === name ? null : name)}
+              onClick={(e) =>
+                setOpen(
+                  e.detail > 0 && matchMedia("(pointer: fine)").matches
+                    ? name
+                    : open === name
+                      ? null
+                      : name,
+                )
+              }
             >
               {name}
               <span>⌟</span>

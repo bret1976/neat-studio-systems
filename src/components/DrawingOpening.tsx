@@ -6,6 +6,7 @@ const skeleton =
 export function DrawingOpening() {
   const root = useRef<HTMLDivElement>(null);
   const [checked, setChecked] = useState(0);
+  const [progress, setProgress] = useState(0);
   useEffect(() => {
     const el = root.current;
     if (!el) return;
@@ -27,7 +28,7 @@ export function DrawingOpening() {
         .fromTo(
           line,
           { strokeDashoffset: 1 },
-          { strokeDashoffset: 0, duration: 1.35, ease: "power1.inOut" },
+          { strokeDashoffset: 0, duration: 3.6, ease: "power1.inOut" },
         );
     });
     const assets = ["/drawings/elevation.svg", "/drawings/plan.svg"].map(
@@ -46,11 +47,24 @@ export function DrawingOpening() {
         if (!disposed) setChecked((n) => n + 1);
       }),
     );
+    const load = { value: 0 };
+    const loading = gsap.to(load, {
+      value: 94,
+      duration: 3.6,
+      ease: "power1.inOut",
+      onUpdate: () => setProgress(Math.round(load.value)),
+    });
+    let finishing = false;
     const finish = () => {
+      if (finishing) return;
+      finishing = true;
+      loading.kill();
+      setProgress(100);
       if (disposed) return;
       gsap.to(el, {
         clipPath: "inset(0 0 100% 0)",
-        duration: 0.6,
+        delay: 0.2,
+        duration: 0.85,
         ease: "power2.inOut",
         onComplete: () => {
           el.hidden = true;
@@ -60,11 +74,12 @@ export function DrawingOpening() {
       });
     };
     Promise.all([drawn, Promise.allSettled(assets)]).then(finish);
-    const fallback = setTimeout(finish, 6000);
+    const fallback = setTimeout(finish, 8000);
     return () => {
       disposed = true;
       clearTimeout(fallback);
       timeline?.kill();
+      loading.kill();
       gsap.killTweensOf(el);
       document.documentElement.classList.remove("opening-active");
     };
@@ -95,7 +110,10 @@ export function DrawingOpening() {
           />
         </svg>
         <div className="opening-rule">
-          <span style={{ width: `${(checked / 3) * 100}%` }} />
+          <b className="mono" style={{ left: `${Math.min(96, progress)}%` }}>
+            {progress}%
+          </b>
+          <span style={{ width: `${progress}%` }} />
         </div>
         <div className="opening-copy">
           <h2>

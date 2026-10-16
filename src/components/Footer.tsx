@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { NeatMonogram } from "./NeatMonogram";
 import { FooterInk } from "./FooterInk";
 export function Footer() {
   return (
@@ -58,6 +59,13 @@ export function Footer() {
             <br />
             An interactive design experience.
           </small>
+        </div>
+        <NeatMonogram />
+        <div className="footer-aux">
+          <div><span className="mono">THE DESIGNER STAYS IN CONTROL.</span><p>Observe carefully. Explain clearly. Recommend thoughtfully.</p></div>
+          <div><span className="mono">DESIGN REVIEW</span><Link href="/resources/model-review">Context before conclusions ↗</Link></div>
+          <div><span className="mono">WORK WITH NEAT</span><Link href="/contact">Request a demonstration ↗</Link></div>
+          <div><span className="mono">RESOURCES</span><Link href="/resources">Original field notes ↗</Link></div>
         </div>
       </div>
       <FooterInk />

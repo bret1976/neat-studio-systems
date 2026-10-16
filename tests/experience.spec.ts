@@ -154,22 +154,16 @@ test("mobile story scroll and responsive issue mapping remain aligned", async ({
   await page.waitForTimeout(1300);
   await page.setViewportSize({ width: 390, height: 844 });
   const workflow = page.locator("#workflow");
-  const rect = await workflow.evaluate((e) => ({
-    top: e.getBoundingClientRect().top + scrollY,
-    height: e.getBoundingClientRect().height,
-    view: innerHeight,
-  }));
-  for (const progress of [0.12, 0.62, 0.9, 0.12]) {
-    await page.evaluate(
-      ({ top, height, view, progress }) =>
-        scrollTo(0, top + (height - view) * progress),
-      { ...rect, progress },
-    );
-    await page.waitForTimeout(300);
-    await expect(workflow.locator(".story-sticky")).toHaveAttribute(
-      "data-phase",
-      String(Math.floor(progress * 4)),
-    );
+  for (const stage of [0, 2, 3, 0]) {
+    await workflow
+      .locator(`.journey-row-${stage}`)
+      .evaluate((e) =>
+        scrollTo(0, e.getBoundingClientRect().top + scrollY - 70),
+      );
+    await page.waitForTimeout(350);
+    await expect(
+      workflow.locator(".journey-progress a").nth(stage),
+    ).toHaveAttribute("aria-current", "step");
   }
   for (const width of [1440, 375]) {
     await page.setViewportSize({ width, height: 900 });

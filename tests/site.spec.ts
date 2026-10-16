@@ -94,43 +94,28 @@ test("layer and workflow progression forward and reverse; ink mask is scroll-dri
   await page.goto("/");
   await expect(page.locator(".drawing-opening")).toBeHidden();
   await page.waitForTimeout(1000);
-  if ((page.viewportSize()?.width || 0) > 760) {
-    const section = page.locator("#workflow");
-    const data = await section.evaluate((e) => ({
-      top: e.getBoundingClientRect().top + scrollY,
-      height: e.getBoundingClientRect().height,
-      view: innerHeight,
-    }));
-    for (const progress of [0.1, 0.35, 0.6, 0.87, 0.1]) {
-      await page.evaluate(
-        ({ top, height, view, progress }) =>
-          window.scrollTo(0, top + (height - view) * progress),
-        { ...data, progress },
-      );
-      await page.waitForTimeout(350);
-      await expect(section.locator(".story-sticky")).toHaveAttribute(
-        "data-phase",
-        String(Math.min(3, Math.floor(progress * 4))),
-      );
-    }
-    await page.screenshot({
-      path: `output/playwright/${info.project.name}/workflow.png`,
-    });
-  } else {
-    await page
-      .getByRole("button", { name: "03 RESOLVE", exact: false })
-      .click();
-    await expect(page.locator(".phase-caption")).toContainText(
-      "MAKE THE RIGHT CHANGE.",
+  const section = page.locator("#workflow");
+  for (const stage of [0, 1, 2, 3, 0]) {
+    const row = section.locator(`.journey-row-${stage}`);
+    await row.evaluate((e) =>
+      scrollTo(0, e.getBoundingClientRect().top + scrollY - 80),
     );
-    await page
-      .getByRole("button", { name: "01 INSPECT", exact: false })
-      .click();
-    await expect(page.locator(".phase-caption")).toContainText(
-      "SEE THE MODEL CLEARLY.",
+    await page.waitForTimeout(350);
+    await expect(
+      section.locator(".journey-progress a").nth(stage),
+    ).toHaveAttribute("aria-current", "step");
+    await expect(row.locator(".journey-stage h3")).toHaveText(
+      ["INSPECT", "INTERPRET", "RESOLVE", "IMPROVE"][stage],
     );
+    expect((await row.boundingBox())!.height).toBeGreaterThan(500);
   }
-  await page.getByRole("button", { name: "DECISIONS", exact: false }).click();
+  await page.screenshot({
+    path: `output/playwright/${info.project.name}/workflow.png`,
+  });
+  await page
+    .locator("#context .layer-controls")
+    .getByRole("button", { name: "DECISIONS", exact: false })
+    .click();
   await expect(page.locator(".context-note")).toContainText(
     "Keep observations",
   );
@@ -170,7 +155,9 @@ test("Assist alternatives and Control observation approval update context and hi
   ).toBeVisible();
   await page.goto("/product/neat-control");
   const control = page.locator(".workspace");
-  await control.getByRole("button", { name: "OBSERVATIONS", exact: true }).click();
+  await control
+    .getByRole("button", { name: "OBSERVATIONS", exact: true })
+    .click();
   await control.getByRole("button", { name: "02 Adjacent door swing" }).click();
   await expect(control.locator(".issue-detail h4")).toHaveText(
     "Adjacent door swing",
@@ -235,9 +222,15 @@ test("navigation, routes, assets, inquiry errors and accessibility", async ({
     challenge: "Review workflow",
     message: "A demonstration inquiry for testing.",
   };
-  expect((await request.post("/api/inquiries", { data: {}, headers: authHeaders, maxRedirects: 0 })).status()).toBe(
-    400,
-  );
+  expect(
+    (
+      await request.post("/api/inquiries", {
+        data: {},
+        headers: authHeaders,
+        maxRedirects: 0,
+      })
+    ).status(),
+  ).toBe(400);
   expect(
     (
       await request.post("/api/inquiries", {
@@ -247,9 +240,15 @@ test("navigation, routes, assets, inquiry errors and accessibility", async ({
       })
     ).status(),
   ).toBe(400);
-  expect((await request.post("/api/inquiries", { data: valid, headers: authHeaders, maxRedirects: 0 })).status()).toBe(
-    503,
-  );
+  expect(
+    (
+      await request.post("/api/inquiries", {
+        data: valid,
+        headers: authHeaders,
+        maxRedirects: 0,
+      })
+    ).status(),
+  ).toBe(503);
   await page.goto("/contact");
   await expect(
     page.getByRole("button", { name: "REQUEST A DEMO" }),
@@ -269,8 +268,8 @@ test("reduced motion exposes stories with working controls and no overflow", asy
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await expect(page.locator(".drawing-opening")).toBeHidden();
-  await page.getByRole("button", { name: "04 IMPROVE", exact: false }).click();
-  await expect(page.locator(".phase-caption")).toContainText(
+  await page.getByRole("link", { name: "04 IMPROVE", exact: false }).click();
+  await expect(page.locator(".journey-row-3 .journey-stage")).toContainText(
     "BUILD ON WHAT YOU LEARN.",
   );
   await expect(page.locator(".story-sticky").first()).toHaveCSS(
