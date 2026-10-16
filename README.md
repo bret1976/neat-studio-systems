@@ -1,6 +1,6 @@
 # NEAT — Intelligent Design Systems
 
-[Verified preview — October 16](https://neat-studio-systems-2n1e3go46-brets-projects-1715089a.vercel.app/)
+[Verified preview — October 16](https://neat-studio-systems-610q4wbyl-brets-projects-1715089a.vercel.app/)
 
 Original architectural-intelligence concept website, built as a separate project from SOLVANE. Visual reference: [Heron AI](https://heronaiapp.com/); interaction research: [creator case study](https://tympanus.net/codrops/2026/10/12/heron-ai/). The approved NEAT brief is archived in `docs/approved-brief.txt`.
 

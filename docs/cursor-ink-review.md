@@ -29,4 +29,4 @@ The original NEAT tower, pavilion, section, plans and closing portal are differe
 
 ## Verification
 
-Production build, TypeScript and ESLint pass. Three backend checks pass. Final browser and deployment results are recorded in deployment.md. Captures include `output/playwright/motion-desktop-*`, `motion-mobile-*`, `scanner-pointer-*` and `tower-organic-front.png`; matched live-source pointer captures are `output/reference/scanner-pointer-*`. Tests verify behaviors and accessibility, not visual equivalence.
+Production build, TypeScript and ESLint pass. Three backend checks pass. Final local desktop/tablet/mobile regression: 31 passed, two scoped skips. Four focused WebKit checks pass. Deployed desktop/mobile: 13 passed, one mouse-only touch skip. Ready preview runtime 48c4aaf; no runtime changes followed verification. Full deployment details are recorded in deployment.md. Captures include `output/playwright/motion-desktop-*`, `motion-mobile-*`, `scanner-pointer-*` and `tower-organic-front.png`; matched live-source pointer captures are `output/reference/scanner-pointer-*`. Tests verify behaviors and accessibility, not visual equivalence.
