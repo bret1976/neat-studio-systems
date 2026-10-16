@@ -118,13 +118,9 @@ test("tower shading reverses with scroll and software carousel has real overflow
   ]) {
     await page.evaluate((y) => scrollTo(0, y), Math.max(0, y));
     await page.waitForTimeout(400);
-    clips.push(
-      await tower
-        .locator(".tower-shaded")
-        .evaluate((e) => getComputedStyle(e).clipPath),
-    );
+    clips.push(await tower.locator(".tower-ink-front").getAttribute("height"));
   }
-  expect(clips[1]).not.toBe(clips[2]);
+  expect(Number(clips[1])).toBeGreaterThan(Number(clips[2]));
   const track = page.locator(".software-carousel-track");
   await page.getByRole("button", { name: "Next software interests" }).click();
   await expect
@@ -134,4 +130,37 @@ test("tower shading reverses with scroll and software carousel has real overflow
     .getByRole("button", { name: "Previous software interests" })
     .click();
   await expect.poll(() => track.evaluate((e) => e.scrollLeft)).toBeLessThan(5);
+});
+
+test("workflow scanner follows the pointer and stays at its viewport position during scroll", async ({
+  page,
+}, info) => {
+  test.skip(
+    !!info.project.use.hasTouch,
+    "Desktop pointer scanner; touch uses scroll-driven default position",
+  );
+  await page.goto("/");
+  await expect(page.locator(".drawing-opening")).toBeHidden();
+  await page
+    .locator("#workflow-stage-1")
+    .evaluate((e) =>
+      scrollTo(0, e.getBoundingClientRect().top + scrollY - 450),
+    );
+  const scanner = page.locator(".journey-scanner");
+  await page.mouse.move(750, 220);
+  await page.waitForTimeout(400);
+  const upper = await scanner.boundingBox();
+  const firstStage = await scanner.getAttribute("data-stage");
+  await page.mouse.move(750, 650);
+  await page.waitForTimeout(400);
+  const lower = await scanner.boundingBox();
+  expect(lower!.y - upper!.y).toBeGreaterThan(400);
+  expect(await scanner.getAttribute("data-stage")).not.toBe(firstStage);
+  await page.evaluate(() => scrollBy(0, 160));
+  await page.waitForTimeout(400);
+  const scrolled = await scanner.boundingBox();
+  expect(Math.abs(scrolled!.y - lower!.y)).toBeLessThan(4);
+  await page.screenshot({
+    path: `output/playwright/${info.project.name}/pointer-scanner.png`,
+  });
 });

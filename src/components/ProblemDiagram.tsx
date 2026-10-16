@@ -74,7 +74,7 @@ export function ProblemDiagram({ index }: { index: number }) {
               className="problem-radar"
               d="M160 115V29A86 86 0 0 1 234 158Z"
               fill="#ab352310"
-              stroke="#ab3523"
+              stroke="var(--red)"
             />
           </>
         ) : (

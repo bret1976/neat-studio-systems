@@ -76,9 +76,15 @@ test("hover redraw, compact optional studies and original closing reveal work", 
   await closing.locator("summary").click();
   const slider = closing.getByRole("slider");
   await slider.fill("80");
-  await expect(closing.locator("mask circle")).toHaveAttribute("r", "1120");
+  await expect(closing.locator(".closing-ink-front")).toHaveAttribute(
+    "height",
+    "1120",
+  );
   await slider.fill("0");
-  await expect(closing.locator("mask circle")).toHaveAttribute("r", "0");
+  await expect(closing.locator(".closing-ink-front")).toHaveAttribute(
+    "height",
+    "0",
+  );
   await page
     .locator("#solutions")
     .evaluate((e) => scrollTo(0, e.getBoundingClientRect().top + scrollY));

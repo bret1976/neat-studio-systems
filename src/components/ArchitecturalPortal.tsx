@@ -31,7 +31,7 @@ export function ArchitecturalPortal({
           strokeDasharray="6 6"
         />
       </g>
-      <circle cx="475" cy="160" r="85" fill="#c33d20" />
+      <circle cx="475" cy="160" r="85" fill="var(--red)" />
       <g stroke="#282828" strokeWidth="2">
         <path
           d="M220 800V370C220 165 580 165 580 370V800H490V370C490 265 310 265 310 370V800Z"
@@ -63,7 +63,7 @@ export function ArchitecturalPortal({
         ))}
         <path d="M490 800L720 900H610L550 850Z" fill="#282828" stroke="none" />
       </g>
-      <circle cx="200" cy="865" r="50" fill="#c33d20" />
+      <circle cx="200" cy="865" r="50" fill="var(--red)" />
       <text x="35" y="975" fontSize="10" fontFamily="monospace" fill="#68685f">
         NEAT / ORIGINAL ARCHITECTURAL STUDY / PORTAL 001
       </text>

@@ -13,7 +13,7 @@ export function ScrollDirector() {
     let lenis: Lenis | undefined;
     let tick: ((t: number) => void) | undefined;
     if (!reduced) {
-      lenis = new Lenis({ duration: 0.85, anchors: true, smoothWheel: true });
+      lenis = new Lenis({ duration: 1.15, anchors: true, smoothWheel: true });
       lenis.on("scroll", ScrollTrigger.update);
       tick = (t) => lenis?.raf(t * 1000);
       gsap.ticker.add(tick);

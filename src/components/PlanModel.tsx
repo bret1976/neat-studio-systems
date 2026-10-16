@@ -38,7 +38,7 @@ export function PlanModel({
           <g className={layer >= 1 ? "layer active" : "layer"}>
             <path
               d="M155 105h190v150H155zM655 105h190v150H655zM155 455h190v140H155z"
-              fill="#c84932"
+              fill="var(--red)"
               opacity=".12"
             />
             <path d="M435 265h210v190H435z" fill="#a7b39b" opacity=".3" />
@@ -47,21 +47,21 @@ export function PlanModel({
             <path
               d="M500 610V490H390V220H620V490H710"
               fill="none"
-              stroke="#c84932"
+              stroke="var(--red)"
               strokeWidth="3"
               strokeDasharray="8 7"
             />
             <path
               d="M490 590l10 15 10-15"
               fill="none"
-              stroke="#c84932"
+              stroke="var(--red)"
               strokeWidth="3"
             />
           </g>
           <g
             className={layer >= 3 ? "layer active" : "layer"}
             fill="none"
-            stroke="#c84932"
+            stroke="var(--red)"
             strokeWidth="2"
           >
             <rect
@@ -74,7 +74,7 @@ export function PlanModel({
               cx={[350, 650, 665, 755][highlight % 4]}
               cy={[200, 200, 460, 270][highlight % 4]}
               r="10"
-              fill="#c84932"
+              fill="var(--red)"
             />
             <path d="M360 200h140l35-55h160" />
             <rect x="535" y="100" width="190" height="45" fill="#f0eee7" />
@@ -84,7 +84,7 @@ export function PlanModel({
               fontFamily="monospace"
               fontSize="12"
               stroke="none"
-              fill="#c84932"
+              fill="var(--red)"
             >
               REVIEW REGION / 0{highlight + 1}
             </text>
@@ -123,7 +123,7 @@ export function PlanModel({
                     : "M650 190a70 70 0 0 0 70 70v-70z"
                 }
                 fill="none"
-                stroke="#ab3523"
+                stroke="var(--red)"
                 strokeWidth="4"
                 strokeDasharray="8 5"
                 opacity={applied ? 0 : 0.7}

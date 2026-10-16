@@ -58,6 +58,8 @@ The reference's proprietary BT Grotesk font, building illustrations and source s
 
 ## Recording fidelity follow-up
 
+Latest interaction review: [cursor, ink and easing](docs/cursor-ink-review.md). Rebuilds the cursor-following workflow scanner, retracting annotations, irregular top-down tower/closing ink, independent sun color and two-layer footer ink. Scroll easing is calibrated against live wheel samples. Original-art and typeface differences remain.
+
 Latest: [measured hero and slow-scroll review](docs/measured-detail-review.md). This revision rebuilds the original pavilion facade, corrects desktop/mobile hero proportions, places the ticker in the caption, restores four-edge rulers, extends the pinned context sequence and delays its sideward exit, adds reversible line masks and remaps drawing hit regions. The review includes actual measurements and remaining differences.
 
 The latest follow-up restores the changing plan introduction card, portrait plan composition, individual selectable findings, role-linked artwork and anchored hero findings. The timestamped audit documents the verified interactions and remaining illustration/typeface differences.

@@ -33,7 +33,7 @@ export function DraftCursor() {
       y += (ty - y) * 0.3;
       trail.unshift({ x, y });
       trail.splice(7);
-      ctx.fillStyle = "#ab3523";
+      ctx.fillStyle = "var(--red)";
       trail.forEach((p, i) => {
         ctx.globalAlpha = (1 - i / 7) * 0.2;
         ctx.fillRect(p.x - 2, p.y - 2, 4, 4);
@@ -41,7 +41,7 @@ export function DraftCursor() {
       ctx.globalAlpha = 1;
       const n = hover ? 12 : 8;
       if (pressed) {
-        ctx.strokeStyle = "#ab3523";
+        ctx.strokeStyle = "var(--red)";
         ctx.strokeRect(x - 8, y - 8, 16, 16);
         ctx.fillRect(x - 1, y - 1, 2, 2);
       } else ctx.fillRect(x - n / 2, y - n / 2, n, n);

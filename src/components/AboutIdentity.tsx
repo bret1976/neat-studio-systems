@@ -90,7 +90,7 @@ export function AboutIdentity() {
               width="60"
               height="60"
               fill="#ab352322"
-              stroke="#ab3523"
+              stroke="var(--red)"
             />
           </g>
           <path

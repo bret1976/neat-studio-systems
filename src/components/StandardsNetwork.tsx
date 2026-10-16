@@ -34,10 +34,15 @@ export function StandardsNetwork() {
         <path
           d="M180 90L370 70 540 160 580 340 430 440 220 420 90 290Z"
           fill="none"
-          stroke="#20211e"
+          stroke="var(--line)"
           strokeWidth="2"
         />
-        <g stroke="#ab3523" strokeWidth="1" opacity=".35">
+        <g
+          stroke="var(--red)"
+          strokeWidth="1"
+          opacity=".55"
+          strokeDasharray="4 4"
+        >
           {nodes.map(([x, y], i) => (
             <path key={i} d={`M290 230L${x} ${y}`} />
           ))}
@@ -50,7 +55,7 @@ export function StandardsNetwork() {
               y={y - 5}
               width="10"
               height="10"
-              fill={selected === i ? "#20211e" : "#ab3523"}
+              fill={selected === i ? "#20211e" : "var(--red)"}
             />
             <text
               x={x + 10}

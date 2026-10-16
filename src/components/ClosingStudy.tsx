@@ -6,17 +6,17 @@ import { ArchitecturalPortal } from "./ArchitecturalPortal";
 gsap.registerPlugin(ScrollTrigger);
 export function ClosingStudy() {
   const root = useRef<HTMLDivElement>(null),
-    mask = useRef<SVGCircleElement>(null),
+    mask = useRef<SVGRectElement>(null),
     manual = useRef(false);
   const [value, setValue] = useState(0);
   const id = useId().replaceAll(":", "");
   const update = (n: number) => {
     setValue(n);
-    mask.current?.setAttribute("r", String(n * 14));
+    mask.current?.setAttribute("height", String(n * 14));
   };
   useEffect(() => {
     if (matchMedia("(prefers-reduced-motion:reduce)").matches) {
-      mask.current?.setAttribute("r", "1400");
+      mask.current?.setAttribute("height", "1400");
       return;
     }
     const t = ScrollTrigger.create({
@@ -27,7 +27,7 @@ export function ClosingStudy() {
         if (!manual.current) {
           const n = Math.round(s.progress * 100);
           setValue(n);
-          mask.current?.setAttribute("r", String(n * 14));
+          mask.current?.setAttribute("height", String(s.progress * 1400));
         }
       },
     });
@@ -51,11 +51,13 @@ export function ClosingStudy() {
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="90" />
           </filter>
           <mask id={`closing-mask-${id}`}>
-            <circle
+            <rect
               ref={mask}
-              cx="430"
-              cy="220"
-              r="0"
+              className="closing-ink-front"
+              x="-150"
+              y="-150"
+              width="1100"
+              height="0"
               fill="white"
               filter={`url(#closing-edge-${id})`}
             />

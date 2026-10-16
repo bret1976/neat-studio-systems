@@ -46,27 +46,43 @@ export function SectionCutaway() {
           />
         ))}
       </g>
+      <rect
+        className="cutaway-marker"
+        x="493"
+        y="173"
+        width="14"
+        height="14"
+        fill="var(--red)"
+      />
+      <rect
+        className="cutaway-marker"
+        x="358"
+        y="463"
+        width="14"
+        height="14"
+        fill="var(--red)"
+      />
       <g className="cutaway-pin pin-window">
-        <path d="M500 180H340L285 125" fill="none" stroke="#c33d20" />
-        <rect x="145" y="65" width="220" height="75" fill="#c33d20" />
+        <path d="M500 180H340L285 125" fill="none" stroke="var(--red)" />
+        <rect x="145" y="65" width="220" height="75" fill="var(--red-panel)" />
         <text x="160" y="90" fontSize="10" fill="white" fontFamily="monospace">
           01 / WINDOW GEOMETRY
         </text>
         <text x="160" y="112" fontSize="15" fill="white">
           REVIEW IN CONTEXT
         </text>
-        <rect x="493" y="173" width="14" height="14" fill="#c33d20" />
+        <rect x="493" y="173" width="14" height="14" fill="var(--red)" />
       </g>
       <g className="cutaway-pin pin-stair">
-        <path d="M365 470H650V425" fill="none" stroke="#c33d20" />
-        <rect x="570" y="425" width="220" height="75" fill="#c33d20" />
+        <path d="M365 470H650V425" fill="none" stroke="var(--red)" />
+        <rect x="570" y="425" width="220" height="75" fill="var(--red-panel)" />
         <text x="585" y="451" fontSize="10" fill="white" fontFamily="monospace">
           02 / STAIR GEOMETRY
         </text>
         <text x="585" y="476" fontSize="15" fill="white">
           HUMAN REVIEW REQUIRED
         </text>
-        <rect x="358" y="463" width="14" height="14" fill="#c33d20" />
+        <rect x="358" y="463" width="14" height="14" fill="var(--red)" />
       </g>
     </svg>
   );
