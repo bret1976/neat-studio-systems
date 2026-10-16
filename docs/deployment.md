@@ -1,5 +1,7 @@
 # Deployment and verification
 
+Latest recording-review preview: https://neat-studio-systems-mzaodzu3m-brets-projects-1715089a.vercel.app/ . Deployment dpl_CzL5sPDgMqUGJyG8RvV9vZnB3c71, runtime commit 1d7853a. Vercel inspect confirms Ready / preview. All 26 deployed desktop/mobile browser checks passed. Local matrix: 82 passed, nine scoped skips across seven sizes/engines. Three backend tests, lint, TypeScript and production build passed. The complete timestamped recording audit is in video-timeline-review.md. Earlier deployment history follows.
+
 Current verified preview (16 October): https://neat-studio-systems-3ks5j1pid-brets-projects-1715089a.vercel.app . Deployment dpl_7ars3hXSwC8PV2zafAq82KEMtdoM, runtime commit 9a8a6ce. Ready / preview confirmed by Vercel inspect. All 22 live desktop/mobile checks passed, in addition to 68 applicable local browser checks and three backend checks. The older deployment details below are retained as historical verification.
 
 Dedicated standalone project: neat-studio-systems. GitHub account bret1976; Vercel team brets-projects-1715089a. Vercel project prj_r38yagPihhp8tBwQGalaCHRD8YSQ. No unrelated project or production domain is modified.

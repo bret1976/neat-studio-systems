@@ -21,3 +21,9 @@ Not claimed: pixel perfection, exact proprietary font/asset reproduction, physic
 
 
 October 16: the prior comparison understated missing functionality. See `feature-gap-audit.md` for the corrected inventory and actual implementations. Basic click/route test passes did not establish reference fidelity. New state-by-state desktop/mobile captures are named revision-*, and an additional behavioral suite exercises approvals, revisions, modes, criteria, assignments, opening, responsive geometry, and scroll reversal.
+
+## Full recording review — 16 October follow-up
+
+The complete 131-second recording was reviewed in timestamped one-second states, including secondary pages. See [video-timeline-review.md](video-timeline-review.md) for section-by-section observations and explicit differences. Added two sequential interstitial headlines, progressive detailed plan with late leftward shift, product-before-workflow ordering, alternating workflow compositions and active stage bar, original standards graph, hover menus, geometric route wipe, sticky product feature tours, filtered resource cards and original plan-to-N identity morph. These changes improve the observed sequence; they do not establish identical artwork, exact source timing, or frame-perfect motion. Pricing and staff claims are not fabricated.
+
+Validation: 82 browser tests passed across seven size/engine projects, with nine deliberately scoped duplicate checks skipped; three backend tests, ESLint, TypeScript and production build passed. Desktop and mobile captures were reviewed. Mobile product tours use horizontal feature controls with normal page flow; desktop retains sticky scroll stages.

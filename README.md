@@ -1,6 +1,6 @@
 # NEAT — Intelligent Design Systems
 
-[Verified preview — October 16](https://neat-studio-systems-3ks5j1pid-brets-projects-1715089a.vercel.app/)
+[Verified preview — October 16](https://neat-studio-systems-mzaodzu3m-brets-projects-1715089a.vercel.app/)
 
 Original architectural-intelligence concept website, built as a separate project from SOLVANE. Visual reference: [Heron AI](https://heronaiapp.com/); interaction research: [creator case study](https://tympanus.net/codrops/2026/10/12/heron-ai/). The approved NEAT brief is archived in `docs/approved-brief.txt`.
 
@@ -55,3 +55,7 @@ See `docs/feature-gap-audit.md` for the October 16 correction and implementation
 `docs/asset-inventory.md`: origins, generation prompt, licenses and exact paths. `docs/heron-reference-audit.md`: observed source behavior, viewport captures and limitations. `docs/visual-comparison.md`: differences and verification. `docs/interaction-specification.md`: geometry/motion architecture. Reference and local screenshots are in the separately supplied comparison archive; they are intentionally excluded from Git/deployment.
 
 The reference's proprietary BT Grotesk font, building illustrations and source scripts are not reused. NEAT's original building geometry, wording and added routes change page length and composition. Matching render/sketch layers share exact pixel geometry; the separate interactive hero uses editable SVG. The original SVG hero is less photorealistic than Heron's textured building. No pixel-perfection claim is made.
+
+## Recording fidelity follow-up
+
+Full timestamped recording review: [docs/video-timeline-review.md](docs/video-timeline-review.md). Includes the sequential plan reveal, alternating workflow compositions, geometric page wipe, sticky product tours, resource filters and original identity morph. Latest local matrix: 82 passed, nine scoped duplicate checks skipped, seven viewport/engine projects; three backend checks, lint, TypeScript and production build pass.
