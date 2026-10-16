@@ -30,3 +30,7 @@ Browser emulation does not establish physical iPhone performance. The marketing 
 ## Verification
 
 Production build, ESLint, TypeScript and three backend checks pass. The selected desktop/tablet/mobile regression run passed 29 checks with one scoped duplicate skip. After the final mobile hero scale/position adjustment, four focused mobile Chromium/WebKit hero and reduced-motion checks passed. Manual matched-view captures verified no horizontal overflow and reversible plan positioning. The hero comparison is output/playwright/measured-hero-comparison.png. Live preview verification is recorded in deployment.md.
+
+The final 390×844 caption starts at y=492.97px, compared with the measured reference y=491.61px. Text block height still differs because the approved NEAT wording differs. Desktop baseline placement was adjusted after a direct image-row comparison. The matched hero comparison shows the remaining original-art differences directly rather than asserting equivalence.
+
+Final measured-revision live verification: all ten desktop/mobile checks passed on 2n1e3go46. Additional responsive checks resized through 768, 375 and 1440 pixels and returned from the product route without page errors or horizontal overflow. No runtime edits followed this verification.

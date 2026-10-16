@@ -1,6 +1,6 @@
 # NEAT — Intelligent Design Systems
 
-[Verified preview — October 16](https://neat-studio-systems-rgsi5aoim-brets-projects-1715089a.vercel.app/)
+[Verified preview — October 16](https://neat-studio-systems-2n1e3go46-brets-projects-1715089a.vercel.app/)
 
 Original architectural-intelligence concept website, built as a separate project from SOLVANE. Visual reference: [Heron AI](https://heronaiapp.com/); interaction research: [creator case study](https://tympanus.net/codrops/2026/10/12/heron-ai/). The approved NEAT brief is archived in `docs/approved-brief.txt`.
 
@@ -57,6 +57,8 @@ See `docs/feature-gap-audit.md` for the October 16 correction and implementation
 The reference's proprietary BT Grotesk font, building illustrations and source scripts are not reused. NEAT's original building geometry, wording and added routes change page length and composition. Matching render/sketch layers share exact pixel geometry; the separate interactive hero uses editable SVG. The original SVG hero is less photorealistic than Heron's textured building. No pixel-perfection claim is made.
 
 ## Recording fidelity follow-up
+
+Latest: [measured hero and slow-scroll review](docs/measured-detail-review.md). This revision rebuilds the original pavilion facade, corrects desktop/mobile hero proportions, places the ticker in the caption, restores four-edge rulers, extends the pinned context sequence and delays its sideward exit, adds reversible line masks and remaps drawing hit regions. The review includes actual measurements and remaining differences.
 
 The latest follow-up restores the changing plan introduction card, portrait plan composition, individual selectable findings, role-linked artwork and anchored hero findings. The timestamped audit documents the verified interactions and remaining illustration/typeface differences.
 
