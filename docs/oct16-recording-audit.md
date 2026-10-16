@@ -28,3 +28,7 @@ The building, section, plan and portal are original NEAT vectors. Hero geometry 
 ## Verification
 
 Production build, ESLint, TypeScript and three backend checks passed. Desktop/tablet/mobile suite: 52 passed, two scoped duplicate skips. Five focused mobile WebKit checks passed. New tests measure differing/reversed wall-fragment transforms, hollow-to-solid opacity, delayed plan detail, retained manual layer selection, hover drawing completion, collapsed optional content and the closing mask's range control. Visual captures are named output/playwright/oct16-*. Fresh 390×844 live-reference capture is output/reference/oct16-live-mobile.png. Live-deployment verification is recorded in deployment.md.
+
+## Deployed verification
+
+Preview: https://neat-studio-systems-hskkf2a8z-brets-projects-1715089a.vercel.app/ . Runtime ccef017, deployment dpl_DiWbynn9JgiC6AKVWJ7aSBuqSK5e. Vercel inspect: Ready / preview. All 36 live desktop/mobile browser checks passed. These verify functional motion/state transitions and responsive controls; they do not establish pixel-perfect visual parity or physical-device performance.

@@ -1,6 +1,6 @@
 # NEAT — Intelligent Design Systems
 
-[Verified preview — October 16](https://neat-studio-systems-bx58i9ohw-brets-projects-1715089a.vercel.app/)
+[Verified preview — October 16](https://neat-studio-systems-hskkf2a8z-brets-projects-1715089a.vercel.app/)
 
 Original architectural-intelligence concept website, built as a separate project from SOLVANE. Visual reference: [Heron AI](https://heronaiapp.com/); interaction research: [creator case study](https://tympanus.net/codrops/2026/10/12/heron-ai/). The approved NEAT brief is archived in `docs/approved-brief.txt`.
 
@@ -57,6 +57,8 @@ See `docs/feature-gap-audit.md` for the October 16 correction and implementation
 The reference's proprietary BT Grotesk font, building illustrations and source scripts are not reused. NEAT's original building geometry, wording and added routes change page length and composition. Matching render/sketch layers share exact pixel geometry; the separate interactive hero uses editable SVG. The original SVG hero is less photorealistic than Heron's textured building. No pixel-perfection claim is made.
 
 ## Recording fidelity follow-up
+
+Latest review: [October 16 recording audit](docs/oct16-recording-audit.md). This revision adds converging wall fragments, staged wall fill/detail, hover redraws, section annotations, stacked plans, a network floorplate and an architectural closing reveal. Local desktop/tablet/mobile: 52 passed, two scoped duplicate skips; focused WebKit: five passed; deployed desktop/mobile: 36 passed. Build, lint, TypeScript and three backend checks pass. Earlier verification follows.
 
 Full timestamped recording review: [docs/video-timeline-review.md](docs/video-timeline-review.md). Includes the sequential plan reveal, alternating workflow compositions, geometric page wipe, sticky product tours, resource filters and original identity morph. Latest local matrix: 82 passed, nine scoped duplicate checks skipped, seven viewport/engine projects; three backend checks, lint, TypeScript and production build pass.
 
