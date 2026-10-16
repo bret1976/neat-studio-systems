@@ -29,6 +29,7 @@ test("hero selection tracks geometry, persists discoveries, resets and supports 
   page,
 }, info) => {
   await page.goto("/");
+  await expect(page.locator(".drawing-opening")).toBeHidden();
   await page.waitForTimeout(1600);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "YOUR DESIGN DESERVESA SECOND SET OF EYES.",
@@ -91,6 +92,7 @@ test("layer and workflow progression forward and reverse; ink mask is scroll-dri
   page,
 }, info) => {
   await page.goto("/");
+  await expect(page.locator(".drawing-opening")).toBeHidden();
   await page.waitForTimeout(1000);
   if ((page.viewportSize()?.width || 0) > 760) {
     const section = page.locator("#workflow");
@@ -189,6 +191,7 @@ test("navigation, routes, assets, inquiry errors and accessibility", async ({
     "Route and API checks are shared across viewports",
   );
   await page.goto("/");
+  await expect(page.locator(".drawing-opening")).toBeHidden();
   if (info.project.name === "mobile")
     await page.getByRole("button", { name: "MENU +", exact: true }).click();
   await page
@@ -264,6 +267,7 @@ test("reduced motion exposes stories with working controls and no overflow", asy
 }, info) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
+  await expect(page.locator(".drawing-opening")).toBeHidden();
   await page.getByRole("button", { name: "04 IMPROVE", exact: false }).click();
   await expect(page.locator(".phase-caption")).toContainText(
     "BUILD ON WHAT YOU LEARN.",

@@ -18,9 +18,13 @@ export function Header() {
     };
     const escape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
+        const trigger = root.current?.querySelector<HTMLButtonElement>(
+          '.nav-group>button[aria-expanded="true"]',
+        );
         setOpen(null);
         setMobile(false);
-        menuButton.current?.focus();
+        if (matchMedia("(min-width:761px)").matches) trigger?.focus();
+        else menuButton.current?.focus();
       }
     };
     document.addEventListener("pointerdown", outside);

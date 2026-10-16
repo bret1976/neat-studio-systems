@@ -7,10 +7,16 @@ import "@fontsource/ibm-plex-mono/400.css";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { DraftCursor } from "@/components/DraftCursor";
 import { ScrollDirector } from "@/components/ScrollDirector";
 const url = process.env.NEXT_PUBLIC_SITE_URL;
 export const metadata: Metadata = {
-  metadataBase: new URL(url || "https://neat-studio-systems.vercel.app"),
+  metadataBase: new URL(
+    url ||
+      (process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "http://localhost:3120"),
+  ),
   title: {
     default: "NEAT | Intelligent Design Systems",
     template: "%s | NEAT",
@@ -39,6 +45,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <Footer />
         <ScrollDirector />
+        <DraftCursor />
       </body>
     </html>
   );

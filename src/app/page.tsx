@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DesignerControl } from "@/components/DesignerControl";
 import Image from "next/image";
 import { ArchitecturalInspectionHero } from "@/components/ArchitecturalInspectionHero";
 import {
@@ -54,7 +55,14 @@ export default function Home() {
         <Label index="02">THE DESIGN BOTTLENECK</Label>
         <div className="problem-intro">
           <div className="tower-drawing ruled">
-            <Image className="tower-image" src="/drawings/tower.svg" width={1000} height={1100} alt="Original axonometric tower study with a structural facade grid and ground-level podium" unoptimized />
+            <Image
+              className="tower-image"
+              src="/drawings/tower.svg"
+              width={1000}
+              height={1100}
+              alt="Original axonometric tower study with a structural facade grid and ground-level podium"
+              unoptimized
+            />
             <span className="red-circle" aria-hidden="true" />
             <span className="mono">
               NORTH COURT / DESIGN STUDY
@@ -286,19 +294,9 @@ export default function Home() {
               <br />
               ACT ONLY WITH AUTHORIZATION.
             </p>
-            <ol className="approval-sequence">
-              {["Observation", "Recommendation", "Review", "Approval"].map(
-                (t, i) => (
-                  <li key={t}>
-                    <span>0{i + 1}</span>
-                    {t}
-                    <b>{i === 3 ? "HUMAN DECISION" : "→"}</b>
-                  </li>
-                ),
-              )}
-            </ol>
           </div>
         </div>
+        <DesignerControl />
         <div className="principle-grid">
           {principles.map(([t, d]) => (
             <article key={t}>

@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useState, PointerEvent } from "react";
 import Link from "next/link";
+import { DrawingOpening } from "./DrawingOpening";
 import { observations } from "@/content/site";
 import { ArchitecturalDrawing } from "./ArchitecturalDrawing";
 import {
@@ -66,6 +67,7 @@ export function ArchitecturalInspectionHero({
       className={`inspection-hero ${compact ? "compact" : ""}`}
       id="inspection"
     >
+      {!compact && <DrawingOpening />}
       <div className="drawing-field ruled">
         <div className="field-meta">
           <span>
@@ -114,7 +116,13 @@ export function ArchitecturalInspectionHero({
             />
           )}
         </div>
-        {active && <div className="inspection-callout" aria-hidden="true"><span className="mono">{active.title}</span><p>{active.description}</p><small>ILLUSTRATIVE / HUMAN REVIEW REQUIRED</small></div>}
+        {active && (
+          <div className="inspection-callout" aria-hidden="true">
+            <span className="mono">{active.title}</span>
+            <p>{active.description}</p>
+            <small>ILLUSTRATIVE / HUMAN REVIEW REQUIRED</small>
+          </div>
+        )}
         <div className="field-bottom mono">
           <span>
             MODEL 001 / RESIDENTIAL STUDY

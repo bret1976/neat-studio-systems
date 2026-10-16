@@ -17,25 +17,34 @@ export function ScrollDirector() {
       tick = (t) => lenis?.raf(t * 1000);
       gsap.ticker.add(tick);
     }
+    const scrollTo = (e: Event) => {
+      const top = (e as CustomEvent<number>).detail;
+      if (lenis) lenis.scrollTo(top, { immediate: true });
+      else window.scrollTo({ top, behavior: "instant" });
+    };
+    window.addEventListener("neat:scrollto", scrollTo);
+    let cleanupIntro = () => {};
     const ctx = gsap.context(() => {
       if (reduced) return;
-      gsap.from(".inspection-canvas .drawing", {
-        opacity: 0,
-        clipPath: "inset(100% 0 0 0)",
-        duration: 1.4,
-        ease: "power2.inOut",
+      const intro = gsap.timeline({
+        paused: document.documentElement.classList.contains("opening-active"),
       });
-      gsap.from(".field-meta,.field-bottom", {
-        opacity: 0,
-        duration: 0.7,
-        delay: 0.8,
-      });
-      gsap.from(".hero-caption h1", {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        delay: 0.6,
-      });
+      intro
+        .from(".inspection-canvas .drawing", {
+          opacity: 0,
+          clipPath: "inset(100% 0 0 0)",
+          duration: 1.1,
+          ease: "power2.inOut",
+        })
+        .from(".field-meta,.field-bottom", { opacity: 0, duration: 0.6 }, 0.3)
+        .from(".hero-caption h1", { y: 30, opacity: 0, duration: 0.7 }, 0.45);
+      const reveal = () => {
+        intro.play();
+        ScrollTrigger.refresh();
+      };
+      window.addEventListener("neat:opening-complete", reveal, { once: true });
+      cleanupIntro = () =>
+        window.removeEventListener("neat:opening-complete", reveal);
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) =>
         gsap.from(el, {
           opacity: 0,
@@ -48,6 +57,8 @@ export function ScrollDirector() {
     const timer = setTimeout(() => ScrollTrigger.refresh(), 400);
     return () => {
       clearTimeout(timer);
+      window.removeEventListener("neat:scrollto", scrollTo);
+      cleanupIntro();
       ctx.revert();
       lenis?.destroy();
       if (tick) gsap.ticker.remove(tick);

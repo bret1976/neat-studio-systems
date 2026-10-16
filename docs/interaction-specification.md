@@ -17,3 +17,13 @@ A generated render and edge-derived drawing share identical camera, dimensions a
 ## Product demonstrations
 
 Assist contains the approved scripted conversation, functional alternative buttons and local approval/reset. Control selects observation regions, updates the demonstration status counters, records local approval history and allows the history tab to be inspected. Nothing claims a live model adapter or an AI endpoint. All state resets on reload/navigation. Production software concepts are documented separately.
+
+## October 16 feature correction
+
+The persistent workflow now carries both elevation and plan through four distinct scenes. Proposal geometry has separate current/proposed paths for corridor and door alternatives. A button records approval; reverse scrolling reconstructs the scene without granting new authorization. The last stage explicitly states when no human decision has been recorded. `useDrawingStages` drives the workflow, context, and approval narratives with one responsive mapping, and manual step selection seeks the same timeline through the shared Lenis controller. Mobile uses shorter sticky ranges. Reduced motion removes the sticky ranges and preserves click-through states.
+
+Context structural paths have normalized path lengths and a continuous stroke-dash offset. Wall tracing, underlying detail opacity, scene scaling, and plan overlays are separate layers. The center statement yields to the floor plan as progress increases. Hero opening traces an original elevation skeleton while two local SVGs and fonts are checked; it runs once per session and fails open after a bounded timeout. It does not claim a real analysis is running.
+
+Control now has observation, project, standards, assignment, and history views. Local criteria toggles update the configured-count view, assigned roles update issue details, and revision requests move sample counts into under review. Approvals and revision decisions are mutually exclusive for each observation. Assist exposes four capability modes and actual current/proposed drawing toggles. All are explicitly local demonstrations.
+
+Footer is now an SVG noise/displacement ink lens, replacing the earlier clean CSS circle. Pointer interpolation and fine-pointer drafting trail use GSAP ticker callbacks with teardown. Coarse-pointer and reduced-motion users see a filled wordmark and no cursor effect.

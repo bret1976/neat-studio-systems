@@ -26,7 +26,7 @@ Run tests against a running production server. Automated tests cover the seven r
 
 ## Implemented
 
-Next.js App Router, React/TypeScript, Tailwind 4 and authored design CSS, GSAP ScrollTrigger, Lenis, Zod. Original SVG drawings and identity. Hero rectangle intersection with direct normalized coordinates, persistent discovered issues, pointer capture, reset, touch/tap and keyboard alternatives. Layered plan, four-state sticky workflow, reversible filtered SVG ink reveal and manual range fallback. Interactive Assist alternatives/approval and Control observations/history. Responsive dropdowns, mobile horizontal problem sequence, role accordions, pointer footer reveal. All 19 required content routes have original content; metadata, OG image, favicon, sitemap/robots and noindex for unconfigured previews.
+Next.js App Router, React/TypeScript, Tailwind 4 and authored design CSS, GSAP ScrollTrigger, Lenis, Zod. Original SVG drawings and identity. Hero rectangle intersection with direct normalized coordinates, persistent discovered issues, pointer capture, reset, touch/tap and keyboard alternatives. Layered plan, four-state sticky workflow, reversible filtered SVG ink reveal and manual range fallback. Interactive Assist capability modes, current/proposed geometry, approval, and Control project/criteria/assignments/observations/revisions/history. A drawing-first opening, progressive plan tracing, explicit designer authorization narrative, drafting cursor and displaced SVG footer lens complete the interaction system. Responsive dropdowns, mobile horizontal problem sequence, role accordions, pointer footer reveal. All 19 required content routes have original content; metadata, OG image, favicon, sitemap/robots and noindex for unconfigured previews.
 
 The site is an interactive marketing demonstration, not an implemented AI/BIM platform. Scripted assistant messages, sample counts and local approvals are labeled as illustrative. No existing design software is read or modified. There are no fabricated customers, code citations, statistics, addresses or endorsements.
 
@@ -45,6 +45,8 @@ Software options are interest categories, not supported integrations. Production
 ## Vercel
 
 Use the dedicated `neat-studio-systems` project and a preview deployment. No production domain is authorized. Configure the above variables and redeploy when enabling inquiries. Preview metadata stays noindex while `NEXT_PUBLIC_SITE_URL` is unset. `.vercelignore` excludes tests, captures, env files, docs and build caches. Deployment identifiers and verification results are in `docs/deployment.md`.
+
+See `docs/feature-gap-audit.md` for the October 16 correction and implementation inventory.
 
 ## Assets and review
 

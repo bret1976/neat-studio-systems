@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
-import { useRef } from "react";
+import { FooterInk } from "./FooterInk";
 export function Footer() {
-  const word = useRef<HTMLDivElement>(null);
   return (
     <footer className="footer">
       <div className="footer-grid">
@@ -61,20 +60,7 @@ export function Footer() {
           </small>
         </div>
       </div>
-      <div
-        className="footer-word"
-        ref={word}
-        onPointerMove={(e) => {
-          const r = e.currentTarget.getBoundingClientRect();
-          word.current?.style.setProperty("--x", `${e.clientX - r.left}px`);
-          word.current?.style.setProperty("--y", `${e.clientY - r.top}px`);
-        }}
-      >
-        <span aria-hidden="true">NEAT.</span>
-        <span className="ink-word" aria-hidden="true">
-          NEAT.
-        </span>
-      </div>
+      <FooterInk />
       <div className="footer-bottom mono">
         <span>© 2026 NEAT. All rights reserved.</span>
         <div>

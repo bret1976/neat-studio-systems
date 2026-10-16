@@ -2,116 +2,15 @@
 import { useEffect, useId, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArchitecturalDrawing } from "./ArchitecturalDrawing";
 import { phases } from "@/content/site";
+import { useDrawingStages } from "./useDrawingStages";
+import { WorkflowModel } from "./WorkflowModel";
 gsap.registerPlugin(ScrollTrigger);
-export function PlanModel({
-  layer = 0,
-  highlight = 0,
-}: {
-  layer?: number;
-  highlight?: number;
-}) {
-  return (
-    <div className="plan-model">
-      <ArchitecturalDrawing plan />
-      <svg viewBox="0 0 1000 700" className="plan-overlay" aria-hidden="true">
-        <g className={layer >= 1 ? "layer active" : "layer"}>
-          <path
-            d="M155 105h190v150H155zM655 105h190v150H655zM155 455h190v140H155z"
-            fill="#c84932"
-            opacity=".12"
-          />
-          <path d="M435 265h210v190H435z" fill="#a7b39b" opacity=".3" />
-        </g>
-        <g className={layer >= 2 ? "layer active" : "layer"}>
-          <path
-            d="M500 610V490H390V220H620V490H710"
-            fill="none"
-            stroke="#c84932"
-            strokeWidth="3"
-            strokeDasharray="8 7"
-          />
-          <path
-            d="M490 590l10 15 10-15"
-            fill="none"
-            stroke="#c84932"
-            strokeWidth="3"
-          />
-        </g>
-        <g
-          className={layer >= 3 ? "layer active" : "layer"}
-          fill="none"
-          stroke="#c84932"
-          strokeWidth="2"
-        >
-          <rect
-            x={highlight === 1 ? 640 : 330}
-            y={highlight === 2 ? 460 : 200}
-            width="100"
-            height="90"
-          />
-          <circle
-            cx={highlight === 1 ? 650 : 350}
-            cy={highlight === 2 ? 460 : 200}
-            r="10"
-            fill="#c84932"
-          />
-          <path d="M360 200h140l35-55h160" />
-          <rect x="535" y="100" width="190" height="45" fill="#f0eee7" />
-          <text
-            x="545"
-            y="127"
-            fontFamily="monospace"
-            fontSize="12"
-            stroke="none"
-            fill="#c84932"
-          >
-            REVIEW REGION / 02
-          </text>
-        </g>
-        <g
-          className={layer >= 4 ? "layer active" : "layer"}
-          fontFamily="monospace"
-          fontSize="12"
-          fill="#20211e"
-        >
-          <rect
-            x="70"
-            y="360"
-            width="210"
-            height="65"
-            fill="#f0eee7"
-            stroke="#20211e"
-          />
-          <text x="80" y="382">
-            PROJECT CRITERIA / v0.1
-          </text>
-          <text x="80" y="405">
-            HUMAN REVIEW REQUIRED
-          </text>
-        </g>
-      </svg>
-    </div>
-  );
-}
+import { PlanModel } from "./PlanModel";
+export { PlanModel } from "./PlanModel";
 export function DesignContext() {
   const root = useRef<HTMLElement>(null);
-  const [layer, setLayer] = useState(0);
-  useEffect(() => {
-    if (
-      matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      matchMedia("(max-width: 760px)").matches
-    )
-      return;
-    const t = ScrollTrigger.create({
-      trigger: root.current,
-      start: "top top",
-      end: "bottom bottom",
-      onUpdate: (self) => setLayer(Math.min(4, Math.floor(self.progress * 5))),
-    });
-    return () => t.kill();
-  }, []);
+  const [layer, setLayer] = useDrawingStages(root, 5);
   return (
     <section className="context-story story-section" ref={root} id="context">
       <div className="story-sticky ruled">
@@ -131,7 +30,14 @@ export function DesignContext() {
             technical requirements.
           </p>
         </div>
-        <PlanModel layer={layer} />
+        <div className="context-model-stage">
+          <span className="context-interstitial" aria-hidden="true">
+            THE PROJECT
+            <br />
+            IS A SYSTEM.
+          </span>
+          <PlanModel layer={layer} />
+        </div>
         <div className="layer-controls" aria-label="Drawing layers">
           {["WALLS", "GEOMETRY", "CIRCULATION", "REVIEW", "DECISIONS"].map(
             (l, i) => (
@@ -178,21 +84,9 @@ export function DesignContext() {
 }
 export function WorkflowStory() {
   const root = useRef<HTMLElement>(null);
-  const [phase, setPhase] = useState(0);
-  useEffect(() => {
-    if (
-      matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      matchMedia("(max-width: 760px)").matches
-    )
-      return;
-    const t = ScrollTrigger.create({
-      trigger: root.current,
-      start: "top top",
-      end: "bottom bottom",
-      onUpdate: (self) => setPhase(Math.min(3, Math.floor(self.progress * 4))),
-    });
-    return () => t.kill();
-  }, []);
+  const [phase, setPhase] = useDrawingStages(root, 4);
+  const [approved, setApproved] = useState(false);
+  const [alternative, setAlternative] = useState(0);
   const p = phases[phase];
   return (
     <section className="workflow story-section" id="workflow" ref={root}>
@@ -214,20 +108,18 @@ export function WorkflowStory() {
           </p>
         </div>
         <div className="workflow-visual">
-          <ArchitecturalDrawing />
-          <div className={`workflow-region phase-${phase}`}>
-            <span>{phase === 3 ? "✓" : "02"}</span>
-          </div>
-          {phase >= 1 && (
-            <div className="workflow-callout">
-              <span className="mono">{p.status}</span>
-              <p>{p.note}</p>
-              {phase === 2 && (
-                <span className="approval-tag">HUMAN APPROVAL REQUIRED</span>
-              )}
-            </div>
-          )}
-          <div className="scan-line" />
+          <WorkflowModel
+            phase={phase}
+            approved={approved}
+            alternative={alternative}
+            onAlternative={setAlternative}
+            onApprove={() => setApproved(true)}
+            onReset={() => {
+              setApproved(false);
+              setAlternative(0);
+              setPhase(0);
+            }}
+          />
         </div>
         <div className="phase-nav" aria-label="Workflow stages">
           {phases.map((s, i) => (
