@@ -32,11 +32,37 @@ export function DesignContext() {
         </div>
         <div className="context-model-stage">
           <span className="context-interstitial" aria-hidden="true">
-            THE PROJECT
-            <br />
-            IS A SYSTEM.
+            <span>
+              INTELLIGENCE INSIDE
+              <br />
+              THE DRAWING.
+            </span>
+            <span>
+              THE PROJECT
+              <br />
+              IS A SYSTEM.
+            </span>
           </span>
           <PlanModel layer={layer} />
+          <div className="context-flow-copy">
+            <span className="mono">INTELLIGENCE WITH CONTEXT</span>
+            <h3>
+              THE BETTER THE CONTEXT,
+              <br />
+              THE BETTER THE DECISION.
+            </h3>
+            <p>
+              GEOMETRY — Understand the spatial relationships within the model.
+            </p>
+            <p>
+              REQUIREMENTS — Compare relevant design conditions against
+              configured review criteria.
+            </p>
+            <p>
+              DECISIONS — Keep observations, recommendations, and approvals
+              connected to their context.
+            </p>
+          </div>
         </div>
         <div className="layer-controls" aria-label="Drawing layers">
           {["WALLS", "GEOMETRY", "CIRCULATION", "REVIEW", "DECISIONS"].map(
@@ -92,7 +118,7 @@ export function WorkflowStory() {
     <section className="workflow story-section" id="workflow" ref={root}>
       <div className="story-sticky ruled" data-phase={phase}>
         <div className="section-label">
-          <span>04 / HOW NEAT WORKS</span>
+          <span>06 / HOW NEAT WORKS</span>
           <span>ILLUSTRATIVE WORKFLOW / NO CONNECTED MODEL</span>
         </div>
         <div className="workflow-heading">
@@ -120,6 +146,10 @@ export function WorkflowStory() {
               setPhase(0);
             }}
           />
+          <div className={`workflow-stage-bar side-${phase % 2}`}>
+            <span>{p.name}</span>
+            <span>{p.title}</span>
+          </div>
         </div>
         <div className="phase-nav" aria-label="Workflow stages">
           {phases.map((s, i) => (
@@ -135,8 +165,13 @@ export function WorkflowStory() {
           ))}
         </div>
         <div className="phase-caption" aria-live="polite">
-          <h3>{p.title}</h3>
-          <p>{p.description}</p>
+          <details>
+            <summary>
+              PHASE DETAILS <span>+</span>
+            </summary>
+            <h3>{p.title}</h3>
+            <p>{p.description}</p>
+          </details>
         </div>
       </div>
       <div className="story-after">

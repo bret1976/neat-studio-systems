@@ -1,5 +1,6 @@
 "use client";
 import { ArchitecturalDrawing } from "./ArchitecturalDrawing";
+import { StandardsNetwork } from "./StandardsNetwork";
 import { PlanModel } from "./PlanModel";
 export function WorkflowModel({
   phase,
@@ -87,6 +88,7 @@ export function WorkflowModel({
           </small>
         </div>
       )}
+      {phase === 3 && <StandardsNetwork />}
       {phase === 3 && (
         <div className="review-history">
           <span className="mono">REVIEW HISTORY / MODEL 001</span>

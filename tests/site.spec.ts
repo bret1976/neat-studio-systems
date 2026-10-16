@@ -170,6 +170,7 @@ test("Assist alternatives and Control observation approval update context and hi
   ).toBeVisible();
   await page.goto("/product/neat-control");
   const control = page.locator(".workspace");
+  await control.getByRole("button", { name: "OBSERVATIONS", exact: true }).click();
   await control.getByRole("button", { name: "02 Adjacent door swing" }).click();
   await expect(control.locator(".issue-detail h4")).toHaveText(
     "Adjacent door swing",

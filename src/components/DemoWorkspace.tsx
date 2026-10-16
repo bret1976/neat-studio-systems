@@ -26,16 +26,38 @@ const details = [
     "Review riser consistency, tread depth, and the intended stair configuration. Confirm assumptions before issuing documentation.",
   ],
 ];
-export function DemoWorkspace({ control = false }: { control?: boolean }) {
+export function DemoWorkspace({
+  control = false,
+  view,
+  onViewChange,
+  mode,
+  onModeChange,
+}: {
+  control?: boolean;
+  view?: string;
+  onViewChange?: (view: string) => void;
+  mode?: number;
+  onModeChange?: (mode: number) => void;
+}) {
   const [selected, setSelected] = useState(0),
     [stage, setStage] = useState(0),
     [approved, setApproved] = useState<number[]>([]),
     [rejected, setRejected] = useState<number[]>([]),
-    [tab, setTab] = useState("observations"),
-    [assistMode, setAssistMode] = useState(0),
+    [internalTab, setInternalTab] = useState("observations"),
+    [internalAssistMode, setInternalAssistMode] = useState(0),
     [before, setBefore] = useState(false),
     [criteria, setCriteria] = useState([true, true, true, true]),
     [assignments, setAssignments] = useState(roles);
+  const tab = view ?? internalTab;
+  const setTab = (next: string) => {
+    setInternalTab(next);
+    onViewChange?.(next);
+  };
+  const assistMode = mode ?? internalAssistMode;
+  const setAssistMode = (next: number) => {
+    setInternalAssistMode(next);
+    onModeChange?.(next);
+  };
   const done = approved.includes(selected),
     declined = rejected.includes(selected);
   const showProposal = !before && (stage > 0 || control);

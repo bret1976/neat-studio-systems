@@ -1,3 +1,6 @@
+import { ProductTour } from "@/components/ProductTour";
+import { ResourceLibrary } from "@/components/ResourceLibrary";
+import { AboutIdentity } from "@/components/AboutIdentity";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { pages } from "@/content/pages";
@@ -32,6 +35,7 @@ export default async function ContentPage({
           <span>{page.label}</span>
           <Link href="/">INDEX / 001 ↗</Link>
         </div>
+        {slug.join("/") === "about" && <AboutIdentity />}
         <div className="page-intro">
           <h1>{page.title}</h1>
           <div>
@@ -43,13 +47,15 @@ export default async function ContentPage({
         </div>
         <div className="page-content">
           {page.kind === "assist" ? (
-            <DemoWorkspace />
+            <ProductTour />
           ) : page.kind === "control" ? (
-            <DemoWorkspace control />
+            <ProductTour control />
+          ) : page.kind === "resources" ? (
+            <ResourceLibrary />
           ) : (
             !["workflow", "demo", "legal"].includes(page.kind || "") && (
               <ArchitecturalDrawing
-                plan={page.kind === "resources" || page.kind === "solutions"}
+                plan={page.kind === "solutions"}
               />
             )
           )}

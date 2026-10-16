@@ -137,28 +137,8 @@ export default function Home() {
         </div>
       </section>
       <DesignContext />
-      <WorkflowStory />
-      <section className="transformation-section" id="drawing-to-design">
-        <Label index="05">FROM ANALYSIS TO POSSIBILITY</Label>
-        <div className="section-heading">
-          <h2>
-            A CLEARER PATH
-            <br />
-            FROM DRAWING
-            <br />
-            TO DESIGN.
-          </h2>
-          <p>
-            A technical drawing contains the information. A design carries the
-            intention. NEAT brings these two perspectives closer together,
-            helping design teams examine details while preserving the vision of
-            the whole.
-          </p>
-        </div>
-        <InkTransformation />
-      </section>
       <section className="product-section" id="neat-assist">
-        <Label index="06">PRODUCT 01 / NEAT ASSIST</Label>
+        <Label index="04">PRODUCT 01 / NEAT ASSIST</Label>
         <div className="section-heading">
           <h2>
             HELP WITHOUT
@@ -187,7 +167,7 @@ export default function Home() {
         </div>
       </section>
       <section className="product-section" id="neat-control">
-        <Label index="07">PRODUCT 02 / NEAT CONTROL</Label>
+        <Label index="05">PRODUCT 02 / NEAT CONTROL</Label>
         <div className="section-heading">
           <h2>
             THE DETAILS
@@ -208,6 +188,26 @@ export default function Home() {
             EXPLORE NEAT CONTROL <span>↗</span>
           </Link>
         </div>
+      </section>
+      <WorkflowStory />
+      <section className="transformation-section" id="drawing-to-design">
+        <Label index="07">FROM ANALYSIS TO POSSIBILITY</Label>
+        <div className="section-heading">
+          <h2>
+            A CLEARER PATH
+            <br />
+            FROM DRAWING
+            <br />
+            TO DESIGN.
+          </h2>
+          <p>
+            A technical drawing contains the information. A design carries the
+            intention. NEAT brings these two perspectives closer together,
+            helping design teams examine details while preserving the vision of
+            the whole.
+          </p>
+        </div>
+        <InkTransformation />
       </section>
       <section className="use-cases" id="solutions">
         <Label index="08">WHO IT&apos;S FOR</Label>

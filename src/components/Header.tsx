@@ -71,11 +71,20 @@ export function Header() {
         }}
       >
         {Object.entries(navGroups).map(([name, links], i) => (
-          <div className="nav-group" key={name}>
+          <div
+            className="nav-group"
+            key={name}
+            onPointerLeave={(e) => {
+              if (e.pointerType === "mouse") setOpen(null);
+            }}
+          >
             <button
+              onPointerEnter={(e) => {
+                if (e.pointerType === "mouse") setOpen(name);
+              }}
               aria-expanded={open === name}
               aria-controls={`nav-${name}`}
-              onClick={() => setOpen(open === name ? null : name)}
+              onClick={(e) => setOpen(e.detail > 0 && matchMedia("(pointer: fine)").matches ? name : open === name ? null : name)}
             >
               {name}
               <span>⌟</span>

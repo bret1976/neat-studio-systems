@@ -7,6 +7,7 @@ import "@fontsource/ibm-plex-mono/400.css";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PageTransition } from "@/components/PageTransition";
 import { DraftCursor } from "@/components/DraftCursor";
 import { ScrollDirector } from "@/components/ScrollDirector";
 const url = process.env.NEXT_PUBLIC_SITE_URL;
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Footer />
         <ScrollDirector />
         <DraftCursor />
+        <PageTransition />
       </body>
     </html>
   );
