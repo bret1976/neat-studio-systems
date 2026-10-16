@@ -25,6 +25,18 @@ test("homepage uses compact product studies with a working local preview", async
   await expect(product.locator(".product-preview")).toHaveCount(1);
   const preview = product.locator(".product-preview");
   await preview
+    .getByRole("button", { name: "Minimize preview", exact: true })
+    .click();
+  await expect(
+    preview.getByRole("button", {
+      name: "APPROVE DEMONSTRATION",
+      exact: false,
+    }),
+  ).toBeHidden();
+  await preview
+    .getByRole("button", { name: "Restore preview", exact: true })
+    .click();
+  await preview
     .getByRole("button", { name: "APPROVE DEMONSTRATION", exact: false })
     .click();
   await expect(preview).toContainText("DEMO DECISION RECORDED");

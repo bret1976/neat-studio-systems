@@ -5,12 +5,19 @@ import { PlanModel } from "./PlanModel";
 export function ProductPreview({ control = false }: { control?: boolean }) {
   const [selected, setSelected] = useState(0);
   const [approved, setApproved] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
   return (
     <div className={`product-preview ${control ? "preview-control" : ""}`}>
       <PlanModel
         layer={3}
-        highlight={selected}
-        proposal={approved ? "corridor" : undefined}
+        highlight={selected === 2 ? 3 : selected}
+        proposal={
+          approved && selected < 2
+            ? selected === 1
+              ? "door"
+              : "corridor"
+            : undefined
+        }
         applied={approved}
       />
       {control && (
@@ -33,7 +40,10 @@ export function ProductPreview({ control = false }: { control?: boolean }) {
               <button
                 key={s}
                 aria-pressed={selected === i}
-                onClick={() => setSelected(i)}
+                onClick={() => {
+                  setSelected(i);
+                  setApproved(false);
+                }}
               >
                 <span>0{i + 1}</span>
                 {s}
@@ -45,33 +55,47 @@ export function ProductPreview({ control = false }: { control?: boolean }) {
       )}
       <div className="preview-popover">
         <div className="mono">
-          ⌑ NEAT {control ? "CONTROL" : "ASSIST"} <span>− ×</span>
+          ⌑ NEAT {control ? "CONTROL" : "ASSIST"}{" "}
+          <button
+            className="preview-minimize"
+            aria-label={collapsed ? "Restore preview" : "Minimize preview"}
+            aria-expanded={!collapsed}
+            onClick={() => setCollapsed(!collapsed)}
+          >
+            {collapsed ? "+" : "−"}
+          </button>
         </div>
-        <p>
-          {
-            [
-              "East corridor clearance",
-              "Adjacent door swing",
-              "Stair geometry",
-            ][selected]
-          }
-        </p>
-        <small>
-          {approved
-            ? "Human approval recorded in this demonstration."
-            : "Review the model condition and compare a proposed adjustment."}
-        </small>
-        <div className="preview-response">
-          {approved
-            ? "✓ DEMO DECISION RECORDED"
-            : "MODEL CONTEXT → GEOMETRY → REVIEW"}
-        </div>
-        <button onClick={() => setApproved(!approved)}>
-          {approved ? "RESET DEMONSTRATION ↺" : "APPROVE DEMONSTRATION ↗"}
-        </button>
-        <Link href={control ? "/product/neat-control" : "/product/neat-assist"}>
-          OPEN FULL WORKSPACE ↗
-        </Link>
+        {!collapsed && (
+          <>
+            <p>
+              {
+                [
+                  "East corridor clearance",
+                  "Adjacent door swing",
+                  "Stair geometry",
+                ][selected]
+              }
+            </p>
+            <small>
+              {approved
+                ? "Human approval recorded in this demonstration."
+                : "Review the model condition and compare a proposed adjustment."}
+            </small>
+            <div className="preview-response">
+              {approved
+                ? "✓ DEMO DECISION RECORDED"
+                : "MODEL CONTEXT → GEOMETRY → REVIEW"}
+            </div>
+            <button onClick={() => setApproved(!approved)}>
+              {approved ? "RESET DEMONSTRATION ↺" : "APPROVE DEMONSTRATION ↗"}
+            </button>
+            <Link
+              href={control ? "/product/neat-control" : "/product/neat-assist"}
+            >
+              OPEN FULL WORKSPACE ↗
+            </Link>
+          </>
+        )}
       </div>
       <span className="preview-tag mono">
         ILLUSTRATIVE PRODUCT STUDY / NO CONNECTED MODEL

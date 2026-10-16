@@ -5212,3 +5212,12 @@ section {
 .product-row > * {
   min-width: 0;
 }
+.preview-minimize {
+  font-size: 12px;
+  line-height: 1;
+  padding: 0 3px;
+  color: inherit;
+}
+.preview-minimize:hover {
+  color: #f19f86;
+}
