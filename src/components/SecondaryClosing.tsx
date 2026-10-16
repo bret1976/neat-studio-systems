@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InkTransformation } from "./DrawingStories";
+import { ClosingStudy } from "./ClosingStudy";
 export function SecondaryClosing() {
   return (
     <section className="secondary-closing ruled">
@@ -16,7 +16,7 @@ export function SecondaryClosing() {
       <Link className="button dark" href="/contact">
         REQUEST A DEMO ↗
       </Link>
-      <InkTransformation closing />
+      <ClosingStudy />
     </section>
   );
 }

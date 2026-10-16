@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, RefObject } from "react";
+import { useEffect, useState, useRef, RefObject } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -9,7 +9,29 @@ export function useDrawingStages(
   manualMobile = false,
 ) {
   const [stage, setStage] = useState(0);
+  const manualStage = useRef<number | null>(null);
   useEffect(() => {
+    const release = () => {
+      manualStage.current = null;
+    };
+    const key = (e: KeyboardEvent) => {
+      if (
+        [
+          "ArrowDown",
+          "ArrowUp",
+          "PageDown",
+          "PageUp",
+          "Home",
+          "End",
+          " ",
+        ].includes(e.key)
+      )
+        release();
+    };
+    addEventListener("wheel", release, { passive: true });
+    addEventListener("touchmove", release, { passive: true });
+    addEventListener("pointerdown", release, { passive: true });
+    addEventListener("keydown", key);
     const media = gsap.matchMedia();
     media.add(
       manualMobile
@@ -22,6 +44,7 @@ export function useDrawingStages(
           end: "bottom bottom",
           invalidateOnRefresh: true,
           onUpdate: (self) => {
+            if (manualStage.current !== null) return;
             setStage(Math.min(count - 1, Math.floor(self.progress * count)));
             root.current?.style.setProperty(
               "--scene-progress",
@@ -36,9 +59,16 @@ export function useDrawingStages(
         return () => trigger.kill();
       },
     );
-    return () => media.revert();
+    return () => {
+      media.revert();
+      removeEventListener("wheel", release);
+      removeEventListener("touchmove", release);
+      removeEventListener("pointerdown", release);
+      removeEventListener("keydown", key);
+    };
   }, [root, count, manualMobile]);
   function select(next: number) {
+    manualStage.current = next;
     setStage(next);
     const el = root.current;
     if (!el) return;

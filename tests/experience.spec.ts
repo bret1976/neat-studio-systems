@@ -125,6 +125,7 @@ test("designer sequence never grants approval through progression alone", async 
 }, info) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
+  await page.locator("#philosophy > summary").click();
   const sequence = page.locator(".approval-story");
   await sequence.getByRole("button", { name: "04 Approval" }).click();
   await expect(sequence.locator(".approval-state")).toContainText(

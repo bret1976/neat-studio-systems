@@ -17,6 +17,8 @@ export function WorkflowJourney() {
         trigger: row,
         start: "top center",
         end: "bottom center",
+        onUpdate: (s) =>
+          row.style.setProperty("--journey-progress", String(s.progress)),
         onEnter: () => setActive(i),
         onEnterBack: () => setActive(i),
       }),
@@ -61,6 +63,7 @@ export function WorkflowJourney() {
           data-stage={i}
         >
           <WorkflowModel
+            journey
             phase={i}
             approved={approved}
             alternative={alternative}

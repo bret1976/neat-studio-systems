@@ -1,6 +1,6 @@
 # Original asset inventory
 
-- `public/drawings/elevation.svg`: original scripted 1200×700 North Court three-story elevation. Facade, glazed bays, stairs, guardrail, trees, structural axes and scale labels. Created by `scripts/drawings.py`; no reference artwork copied.
+- `public/drawings/elevation.svg`: original scripted 1200×700 North Court two-story pavilion elevation. Directional stone/glazing shadows, stairs, guardrail, individually branched trees and scale labels. Current vector is reproducible with `python3 scripts/pavilion.py`; this replaces the earlier three-story grid study. No reference artwork copied.
 - `public/drawings/tower.svg`: original axonometric vertical study, glazing grid, structural piers and podium. Replaces an initial rotated-elevation approximation after screenshot review.
 - `public/drawings/plan.svg`: original 1000×700 courtyard floor plan with door arcs, furniture, stairs and grid. Same local drawing generator.
 - `public/logos/neat.svg`, `neat-white.svg`, `mark.svg`; `src/app/icon.svg`: original geometric NEAT identity and drafting-point compact mark. SVG, no licensed third-party logo.
@@ -22,3 +22,5 @@ Reference site, case-study media and recording are audit evidence only, excluded
 ## Second recording pass
 
 `elevation.svg` now includes original directional facade shadows and a clipped procedural charcoal texture. Original React/SVG geometry adds four architectural problem diagrams, an arched portal study and a dimensional NEAT monogram. Tower outlines and shading use the same original SVG with a code-driven filter and scroll mask. No new generated bitmap or third-party reference artwork was added.
+
+October 16 motion assets: `PlanAssembly.tsx` supplies eight converging wall fragments, `SectionCutaway.tsx` is an original pavilion section with two contextual annotations, and `ClosingStudy.tsx` applies a procedural ink mask to the original portal SVG. The closing drawing is vector artwork rather than the earlier landscape photograph.

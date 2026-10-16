@@ -1,6 +1,44 @@
+"use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 export function ProblemDiagram({ index }: { index: number }) {
+  const root = useRef<SVGSVGElement>(null);
+  useEffect(() => {
+    const el = root.current,
+      card = el?.closest("article");
+    if (!el || !card) return;
+    const paths = el.querySelectorAll(
+      ".problem-object path,.problem-object circle",
+    );
+    paths.forEach((p) => {
+      p.setAttribute("pathLength", "1");
+    });
+    let tween: gsap.core.Tween | undefined;
+    const replay = () => {
+      if (matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+      tween?.kill();
+      tween = gsap.fromTo(
+        paths,
+        { strokeDasharray: 1, strokeDashoffset: 1 },
+        {
+          strokeDashoffset: 0,
+          duration: 0.85,
+          stagger: 0.04,
+          ease: "power1.inOut",
+        },
+      );
+    };
+    card.addEventListener("pointerenter", replay);
+    card.addEventListener("focusin", replay);
+    return () => {
+      tween?.kill();
+      card.removeEventListener("pointerenter", replay);
+      card.removeEventListener("focusin", replay);
+    };
+  }, []);
   return (
     <svg
+      ref={root}
       className={`draft-problem draft-problem-${index}`}
       viewBox="0 0 320 240"
       aria-hidden="true"

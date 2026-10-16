@@ -1,4 +1,5 @@
 "use client";
+import { ArchitecturalDrawing } from "./ArchitecturalDrawing";
 import { useState } from "react";
 const nodes = [
   [180, 90],
@@ -24,6 +25,7 @@ export function StandardsNetwork() {
   const [selected, setSelected] = useState(5);
   return (
     <div className="standards-network">
+      <ArchitecturalDrawing plan className="network-floorplate" />
       <svg
         viewBox="0 0 650 500"
         aria-label="Original project-context drawing connecting model geometry, review criteria and human decisions"

@@ -1,8 +1,10 @@
 "use client";
+import { SectionCutaway } from "./SectionCutaway";
 import { ArchitecturalDrawing } from "./ArchitecturalDrawing";
 import { StandardsNetwork } from "./StandardsNetwork";
 import { PlanModel } from "./PlanModel";
 export function WorkflowModel({
+  journey = false,
   phase,
   approved,
   alternative,
@@ -10,6 +12,7 @@ export function WorkflowModel({
   onApprove,
   onReset,
 }: {
+  journey?: boolean;
   phase: number;
   approved: boolean;
   alternative: number;
@@ -24,12 +27,24 @@ export function WorkflowModel({
       data-approved={approved}
     >
       <div className="review-building">
-        <ArchitecturalDrawing />
+        {journey ? <SectionCutaway /> : <ArchitecturalDrawing />}
         <div className="building-redline">
           <span>02 / CIRCULATION REVIEW</span>
         </div>
       </div>
       <div className="review-plan">
+        {journey && phase === 2 && (
+          <div className="plan-deck" aria-hidden="true">
+            <div>
+              <span className="mono">NORTH COURT / LEVEL 02</span>
+              <PlanModel layer={0} />
+            </div>
+            <div>
+              <span className="mono">NORTH COURT / GROUND FLOOR</span>
+              <PlanModel layer={0} />
+            </div>
+          </div>
+        )}
         <PlanModel
           layer={phase === 0 ? 0 : phase === 3 ? 4 : 3}
           highlight={alternative}
@@ -44,6 +59,15 @@ export function WorkflowModel({
           MODEL 001 / INSPECTING GEOMETRY
           <span className="scan-sweep" />
         </div>
+      )}
+      {journey && phase === 1 && (
+        <span className="review-hot-zone">
+          <span>
+            OBSERVATION 02
+            <br />
+            CORRIDOR CLEARANCE
+          </span>
+        </span>
       )}
       {phase === 1 && (
         <div className="review-explanation">

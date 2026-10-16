@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 const skeleton =
-  "M130 590H1070M245 550V160H955V550M245 290H955M245 420H955M245 550H955M385 145V550M525 145V550M665 145V550M805 145V550M945 145V550M522 295H678V550H522ZM230 550H398V590H230ZM690 508H920V550H690";
+  "M130 590H1070M245 550V160H955V550M245 340H955M245 550H955M385 145V550M525 145V550M665 145V550M805 145V550M945 145V550M520 306H682V551H520ZM230 550H398V590H230ZM690 508H920V550H690";
 export function DrawingOpening() {
   const root = useRef<HTMLDivElement>(null);
   const [checked, setChecked] = useState(0);
@@ -28,7 +28,7 @@ export function DrawingOpening() {
         .fromTo(
           line,
           { strokeDashoffset: 1 },
-          { strokeDashoffset: 0, duration: 3.6, ease: "power1.inOut" },
+          { strokeDashoffset: 0, duration: 5.5, ease: "power1.inOut" },
         );
     });
     const assets = ["/drawings/elevation.svg", "/drawings/plan.svg"].map(
@@ -50,7 +50,7 @@ export function DrawingOpening() {
     const load = { value: 0 };
     const loading = gsap.to(load, {
       value: 94,
-      duration: 3.6,
+      duration: 5.5,
       ease: "power1.inOut",
       onUpdate: () => setProgress(Math.round(load.value)),
     });

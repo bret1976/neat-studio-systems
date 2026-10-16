@@ -1,3 +1,4 @@
+import { ClosingStudy } from "@/components/ClosingStudy";
 import Link from "next/link";
 import { DesignerControl } from "@/components/DesignerControl";
 import Image from "next/image";
@@ -71,9 +72,9 @@ export default function Home() {
             <Link href="/product" className="button">
               LEARN MORE <span>↗</span>
             </Link>
+            <SoftwareStrip />
           </div>
         </div>
-        <SoftwareStrip />
         <div
           className="problem-grid"
           tabIndex={0}
@@ -151,25 +152,30 @@ export default function Home() {
         </div>
       </section>
       <WorkflowJourney />
-      <section className="transformation-section" id="drawing-to-design">
-        <Label index="07">FROM ANALYSIS TO POSSIBILITY</Label>
-        <div className="section-heading">
-          <h2>
-            A CLEARER PATH
-            <br />
-            FROM DRAWING
-            <br />
-            TO DESIGN.
-          </h2>
-          <p>
-            A technical drawing contains the information. A design carries the
-            intention. NEAT brings these two perspectives closer together,
-            helping design teams examine details while preserving the vision of
-            the whole.
-          </p>
-        </div>
-        <InkTransformation />
-      </section>
+      <details className="extended-study" id="drawing-to-design">
+        <summary>
+          FROM ANALYSIS TO POSSIBILITY <span>EXPLORE THE DRAWING STUDY +</span>
+        </summary>
+        <section className="transformation-section">
+          <Label index="07">FROM ANALYSIS TO POSSIBILITY</Label>
+          <div className="section-heading">
+            <h2>
+              A CLEARER PATH
+              <br />
+              FROM DRAWING
+              <br />
+              TO DESIGN.
+            </h2>
+            <p>
+              A technical drawing contains the information. A design carries the
+              intention. NEAT brings these two perspectives closer together,
+              helping design teams examine details while preserving the vision
+              of the whole.
+            </p>
+          </div>
+          <InkTransformation />
+        </section>
+      </details>
       <section className="use-cases" id="solutions">
         <Label index="08">WHO IT&apos;S FOR</Label>
         <div className="section-heading">
@@ -221,53 +227,61 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="philosophy" id="philosophy">
-        <Label index="09">OUR PHILOSOPHY</Label>
-        <div className="philosophy-layout">
-          <h2 data-reveal>
-            INTELLIGENCE
-            <br />
-            SHOULD SUPPORT
-            <br />
-            THE DESIGNER.
-            <br />
-            <span className="muted">
-              NOT REPLACE
+      <details className="extended-study" id="philosophy">
+        <summary>
+          THE DESIGNER STAYS IN CONTROL. <span>EXPLORE OUR PHILOSOPHY +</span>
+        </summary>
+        <section className="philosophy">
+          <Label index="09">OUR PHILOSOPHY</Label>
+          <div className="philosophy-layout">
+            <h2 data-reveal>
+              INTELLIGENCE
               <br />
-              THEM.
-            </span>
-          </h2>
-          <div>
-            <p>
-              The most important decisions in architecture require context,
-              experience, judgment, and responsibility.
-            </p>
-            <p>
-              NEAT is designed around the idea that intelligent systems should
-              improve how designers work without taking control away from them.
-            </p>
-            <p className="mono">
-              OBSERVE CAREFULLY.
+              SHOULD SUPPORT
               <br />
-              EXPLAIN CLEARLY.
+              THE DESIGNER.
               <br />
-              RECOMMEND THOUGHTFULLY.
-              <br />
-              ACT ONLY WITH AUTHORIZATION.
-            </p>
+              <span className="muted">
+                NOT REPLACE
+                <br />
+                THEM.
+              </span>
+            </h2>
+            <div>
+              <p>
+                The most important decisions in architecture require context,
+                experience, judgment, and responsibility.
+              </p>
+              <p>
+                NEAT is designed around the idea that intelligent systems should
+                improve how designers work without taking control away from
+                them.
+              </p>
+              <p className="mono">
+                OBSERVE CAREFULLY.
+                <br />
+                EXPLAIN CLEARLY.
+                <br />
+                RECOMMEND THOUGHTFULLY.
+                <br />
+                ACT ONLY WITH AUTHORIZATION.
+              </p>
+            </div>
           </div>
-        </div>
-        <DesignerControl />
-        <div className="principle-grid">
-          {principles.map(([t, d]) => (
-            <article key={t}>
-              <h3>{t}</h3>
-              <p>{d}</p>
-            </article>
-          ))}
-        </div>
-        <div className="section-statement">THE DESIGNER STAYS IN CONTROL.</div>
-      </section>
+          <DesignerControl />
+          <div className="principle-grid">
+            {principles.map(([t, d]) => (
+              <article key={t}>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </article>
+            ))}
+          </div>
+          <div className="section-statement">
+            THE DESIGNER STAYS IN CONTROL.
+          </div>
+        </section>
+      </details>
       <section className="final-cta">
         <Label index="10">A MORE INTELLIGENT WAY TO DESIGN</Label>
         <div className="cta-layout">
@@ -295,7 +309,7 @@ export default function Home() {
             </div>
             <span className="mono">DESIGN FREELY. BUILD INTELLIGENTLY.</span>
           </div>
-          <InkTransformation closing />
+          <ClosingStudy />
         </div>
       </section>
     </>

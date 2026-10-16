@@ -43,7 +43,7 @@ export function DesignContext() {
               IS A SYSTEM.
             </span>
           </span>
-          <PlanModel layer={layer} />
+          <PlanModel layer={layer} assembly />
           <div className="context-flow-copy">
             <span className="mono">INTELLIGENCE WITH CONTEXT</span>
             <h3>

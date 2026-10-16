@@ -119,6 +119,7 @@ test("layer and workflow progression forward and reverse; ink mask is scroll-dri
   await expect(page.locator(".context-note")).toContainText(
     "Keep observations",
   );
+  await page.locator("#drawing-to-design > summary").click();
   const ink = page.locator("#drawing-to-design .ink-transformation");
   const range = ink.getByRole("slider");
   await range.fill("80");

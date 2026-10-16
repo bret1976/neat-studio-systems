@@ -1,4 +1,8 @@
-export function ArchitecturalPortal() {
+export function ArchitecturalPortal({
+  idPrefix = "portal-study",
+}: {
+  idPrefix?: string;
+}) {
   return (
     <svg
       className="architectural-portal"
@@ -8,14 +12,14 @@ export function ArchitecturalPortal() {
     >
       <defs>
         <pattern
-          id="portal-hatch"
+          id={`${idPrefix}-hatch`}
           width="5"
           height="5"
           patternUnits="userSpaceOnUse"
         >
           <path d="M0 5L5 0" stroke="#282828" strokeWidth=".4" opacity=".35" />
         </pattern>
-        <linearGradient id="portal-shade">
+        <linearGradient id={`${idPrefix}-shade`}>
           <stop stopColor="#282828" />
           <stop offset="1" stopColor="#93958a" />
         </linearGradient>
@@ -35,11 +39,11 @@ export function ArchitecturalPortal() {
         />
         <path
           d="M220 800V370C220 165 580 165 580 370V800H490V370C490 265 310 265 310 370V800Z"
-          fill="url(#portal-hatch)"
+          fill={`url(#${idPrefix}-hatch)`}
         />
         <path
           d="M580 370L645 320V750L580 800ZM310 370L375 320V750L310 800Z"
-          fill="url(#portal-shade)"
+          fill={`url(#${idPrefix}-shade)`}
         />
         <path
           d="M220 370C220 165 580 165 580 370L645 320C645 115 285 115 285 320Z"

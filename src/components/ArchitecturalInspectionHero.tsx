@@ -117,6 +117,11 @@ export function ArchitecturalInspectionHero({
             >
               X {Math.round(coords.x * 1200)}
               <br />Y {Math.round(coords.y * 700)}
+              <b>
+                CLICK AND DRAG TO
+                <br />
+                REVIEW THE DRAWING
+              </b>
             </span>
           )}
           {box && (
@@ -180,6 +185,16 @@ export function ArchitecturalInspectionHero({
         >
           EXPLORE NEAT <span>↗</span>
         </Link>
+      </div>
+      <div className="hero-ticker mono" aria-hidden="true">
+        <div>
+          {[0, 1].map((n) => (
+            <span key={n}>
+              DESIGN FREELY. ◦ BUILD INTELLIGENTLY. ◦ YOUR DESIGN. YOUR CONTROL.
+              ◦ CONTEXT BEFORE CONCLUSIONS. ◦{" "}
+            </span>
+          ))}
+        </div>
       </div>
       <div className="inspection-tray">
         <div className="inspection-options">

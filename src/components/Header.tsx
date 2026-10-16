@@ -110,7 +110,10 @@ export function Header() {
                 )
               }
             >
-              {name}
+              <span className="nav-roll">
+                <span>{name}</span>
+                <span aria-hidden="true">{name}</span>
+              </span>
               <span>⌟</span>
             </button>
             <div
@@ -124,7 +127,10 @@ export function Header() {
                   href={url}
                   aria-current={pathname === url ? "page" : undefined}
                 >
-                  {label}
+                  <span className="nav-roll">
+                    <span>{label}</span>
+                    <span aria-hidden="true">{label}</span>
+                  </span>
                   <span>↗</span>
                 </Link>
               ))}

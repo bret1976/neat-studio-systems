@@ -16,7 +16,7 @@ export function ArchitecturalDrawing({
       alt={
         plan
           ? "Original North Court floor plan with courtyard, rooms, doors and circulation"
-          : "Original North Court three-story elevation with balconies, stairs, entrance and structural grid"
+          : "Original North Court two-story pavilion elevation with balconies, stairs, entrance and structural grid"
       }
       className={`drawing ${className}`}
       loading={eager ? "eager" : "lazy"}

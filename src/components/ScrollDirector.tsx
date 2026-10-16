@@ -29,15 +29,20 @@ export function ScrollDirector() {
       const intro = gsap.timeline({
         paused: document.documentElement.classList.contains("opening-active"),
       });
-      intro
-        .from(".inspection-canvas .drawing", {
-          opacity: 0,
-          clipPath: "inset(100% 0 0 0)",
-          duration: 1.1,
-          ease: "power2.inOut",
-        })
-        .from(".field-meta,.field-bottom", { opacity: 0, duration: 0.6 }, 0.3)
-        .from(".hero-caption h1", { y: 30, opacity: 0, duration: 0.7 }, 0.45);
+      if (document.querySelector(".inspection-canvas"))
+        intro
+          .from(".inspection-canvas .drawing", {
+            opacity: 0,
+            clipPath: "inset(100% 0 0 0)",
+            duration: 1.1,
+            ease: "power2.inOut",
+          })
+          .from(".field-meta,.field-bottom", { opacity: 0, duration: 0.6 }, 0.3)
+          .from(
+            ".hero-caption .hero-title",
+            { y: 30, opacity: 0, duration: 0.7 },
+            0.45,
+          );
       const reveal = () => {
         intro.play();
         ScrollTrigger.refresh();
@@ -54,9 +59,15 @@ export function ScrollDirector() {
         }),
       );
     });
+    const refreshDetails = (e: Event) => {
+      if ((e.target as HTMLElement).matches("details"))
+        requestAnimationFrame(() => ScrollTrigger.refresh());
+    };
+    document.addEventListener("toggle", refreshDetails, true);
     const timer = setTimeout(() => ScrollTrigger.refresh(), 400);
     return () => {
       clearTimeout(timer);
+      document.removeEventListener("toggle", refreshDetails, true);
       window.removeEventListener("neat:scrollto", scrollTo);
       cleanupIntro();
       ctx.revert();

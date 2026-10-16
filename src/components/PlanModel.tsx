@@ -1,19 +1,23 @@
 "use client";
+import { PlanAssembly } from "./PlanAssembly";
 import { ArchitecturalDrawing } from "./ArchitecturalDrawing";
 export function PlanModel({
+  assembly = false,
   layer = 0,
   highlight = 0,
   proposal,
   applied = false,
 }: {
+  assembly?: boolean;
   layer?: number;
   highlight?: number;
   proposal?: "corridor" | "door";
   applied?: boolean;
 }) {
   return (
-    <div className="plan-model">
+    <div className={`plan-model ${assembly ? "assembling-plan" : ""}`}>
       <ArchitecturalDrawing plan />
+      {assembly && <PlanAssembly />}
       <svg
         viewBox="0 0 1000 700"
         className="plan-structural"
