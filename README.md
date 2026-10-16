@@ -1,6 +1,6 @@
 # NEAT — Intelligent Design Systems
 
-[Verified preview — October 16](https://neat-studio-systems-mzaodzu3m-brets-projects-1715089a.vercel.app/)
+[Verified preview — October 16](https://neat-studio-systems-bx58i9ohw-brets-projects-1715089a.vercel.app/)
 
 Original architectural-intelligence concept website, built as a separate project from SOLVANE. Visual reference: [Heron AI](https://heronaiapp.com/); interaction research: [creator case study](https://tympanus.net/codrops/2026/10/12/heron-ai/). The approved NEAT brief is archived in `docs/approved-brief.txt`.
 
@@ -59,3 +59,5 @@ The reference's proprietary BT Grotesk font, building illustrations and source s
 ## Recording fidelity follow-up
 
 Full timestamped recording review: [docs/video-timeline-review.md](docs/video-timeline-review.md). Includes the sequential plan reveal, alternating workflow compositions, geometric page wipe, sticky product tours, resource filters and original identity morph. Latest local matrix: 82 passed, nine scoped duplicate checks skipped, seven viewport/engine projects; three backend checks, lint, TypeScript and production build pass.
+
+The second structural review replaces full homepage workspaces with compact product studies and introduces four independent vertical workflow panels. It also corrects tower shading, word reveal, header direction, plan framing, carousel controls, footer geometry, product detail page heroes/FAQ/closing sequences and About editorial art. See docs/video-timeline-review.md for the original recording timestamps and remaining differences.
