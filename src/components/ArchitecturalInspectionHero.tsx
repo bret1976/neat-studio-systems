@@ -44,7 +44,12 @@ export function ArchitecturalInspectionHero({
     }
   }
   function down(e: PointerEvent<HTMLDivElement>) {
-    if (e.button !== 0 || (e.target as HTMLElement).closest("button,a")) return;
+    const target = (e.target as HTMLElement).closest("button,a");
+    if (
+      e.button !== 0 ||
+      (target && !target.classList.contains("observation-marker"))
+    )
+      return;
     e.currentTarget.setPointerCapture(e.pointerId);
     start.current = normalizedPointer(
       e.clientX,
@@ -54,6 +59,21 @@ export function ArchitecturalInspectionHero({
     setBox({ ...start.current, w: 0, h: 0 });
   }
   function end(e: PointerEvent<HTMLDivElement>) {
+    if (start.current && canvas.current) {
+      const pt = normalizedPointer(
+        e.clientX,
+        e.clientY,
+        canvas.current.getBoundingClientRect(),
+      );
+      const region = selectionRect(start.current, pt);
+      const hits = observations.filter((o) => intersects(region, o.region));
+      if (hits.length) {
+        setFound((old) =>
+          Array.from(new Set([...old, ...hits.map((o) => o.id)])),
+        );
+        setSelected(hits[hits.length - 1].id);
+      }
+    }
     start.current = null;
     setBox(null);
     if (e.currentTarget.hasPointerCapture(e.pointerId))
@@ -71,6 +91,15 @@ export function ArchitecturalInspectionHero({
     >
       {!compact && <DrawingOpening />}
       <div className="drawing-field ruled">
+        {["tl", "tr", "bl", "br"].map((corner) => (
+          <span
+            key={corner}
+            className={`drawing-corner corner-${corner}`}
+            aria-hidden="true"
+          >
+            +
+          </span>
+        ))}
         <div className="field-meta">
           <span>
             FOCUS: INTELLIGENT MODEL REVIEW &amp; ARCHITECTURAL AUTOMATION
@@ -195,15 +224,15 @@ export function ArchitecturalInspectionHero({
         >
           EXPLORE NEAT <span>↗</span>
         </Link>
-      </div>
-      <div className="hero-ticker mono" aria-hidden="true">
-        <div>
-          {[0, 1].map((n) => (
-            <span key={n}>
-              DESIGN FREELY. ◦ BUILD INTELLIGENTLY. ◦ YOUR DESIGN. YOUR CONTROL.
-              ◦ CONTEXT BEFORE CONCLUSIONS. ◦{" "}
-            </span>
-          ))}
+        <div className="hero-ticker mono" aria-hidden="true">
+          <div>
+            {[0, 1].map((n) => (
+              <span key={n}>
+                DESIGN FREELY. ◦ BUILD INTELLIGENTLY. ◦ YOUR DESIGN. YOUR
+                CONTROL. ◦ CONTEXT BEFORE CONCLUSIONS. ◦{" "}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
       <div className="inspection-tray">

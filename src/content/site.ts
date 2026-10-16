@@ -5,7 +5,7 @@ export const observations = [
     category: "Balcony protection",
     description:
       "Potential guardrail-height concern. Verify the design against the applicable adopted building code and project conditions.",
-    region: { x: 0.574, y: 0.711, w: 0.19, h: 0.073 },
+    region: { x: 0.656, y: 0.686, w: 0.037, h: 0.155 },
     action: "Inspect balcony protection and project criteria.",
   },
   {
@@ -14,7 +14,7 @@ export const observations = [
     category: "Stair geometry",
     description:
       "Review riser consistency, tread depth, and applicable stair requirements before documentation.",
-    region: { x: 0.195, y: 0.785, w: 0.14, h: 0.06 },
+    region: { x: 0.16, y: 0.735, w: 0.135, h: 0.108 },
     action: "Compare stair dimensions and review consistency.",
   },
   {
@@ -23,7 +23,7 @@ export const observations = [
     category: "Principal entrance",
     description:
       "Check required clear opening dimensions and maneuvering clearances for the intended occupancy and accessibility criteria.",
-    region: { x: 0.443, y: 0.6, w: 0.11, h: 0.17 },
+    region: { x: 0.592, y: 0.562, w: 0.052, h: 0.125 },
     action: "Review opening dimensions and approach clearances.",
   },
   {
@@ -32,7 +32,7 @@ export const observations = [
     category: "Circulation coordination",
     description:
       "Confirm exit access travel distance, corridor configuration, and applicable fire-safety requirements.",
-    region: { x: 0.572, y: 0.43, w: 0.11, h: 0.17 },
+    region: { x: 0.69, y: 0.738, w: 0.16, h: 0.105 },
     action: "Trace the exit access route within the project.",
   },
 ] as const;

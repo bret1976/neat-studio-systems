@@ -40,6 +40,7 @@ export function Header() {
       const current = scrollY;
       if (Math.abs(current - previous) < 4) return;
       const hasFocus = root.current?.contains(document.activeElement);
+      root.current?.classList.toggle("header-scrolled", current > 300);
       root.current?.classList.toggle(
         "header-away",
         current > 300 && current > previous && !mobile && !open && !hasFocus,
@@ -64,7 +65,9 @@ export function Header() {
         <span className="brand-symbol" aria-hidden="true">
           ⌑
         </span>{" "}
-        NEAT<span className="red">.</span>
+        <span className="brand-word">
+          NEAT<span className="red">.</span>
+        </span>
       </Link>
       <button
         className="menu-toggle"

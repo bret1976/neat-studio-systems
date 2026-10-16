@@ -6024,3 +6024,259 @@ section {
     left: auto;
   }
 }
+/* Measured desktop sheet: full viewport width, proportional header, caption and drawing field. */
+html {
+  scrollbar-width: none;
+  scrollbar-gutter: auto;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 761px) {
+  :root {
+    --sheet-margin: clamp(7px, 0.463vw, 10px);
+    --sheet-header: clamp(56px, 3.91vw, 76px);
+    --sheet-caption: clamp(133px, 9.26vw, 178px);
+  }
+  body {
+    margin: var(--sheet-margin);
+  }
+  .header {
+    height: var(--sheet-header);
+    top: var(--sheet-margin);
+  }
+  .header .brand {
+    padding-inline: clamp(22px, 1.67vw, 33px);
+  }
+  .header .navigation {
+    width: 50%;
+  }
+  .header .navigation > *,
+  .header .nav-group > button {
+    flex: 1;
+    min-width: 0 !important;
+    width: auto;
+  }
+  .header .navigation > a,
+  .header .nav-group > button {
+    padding: clamp(12px, 0.9vw, 18px);
+  }
+  .header .nav-dropdown {
+    top: calc(var(--sheet-header) - 2px);
+  }
+  .inspection-hero:not(.compact) .drawing-field {
+    height: calc(
+      100svh - var(--sheet-header) - var(--sheet-caption) -
+        var(--sheet-margin) * 2
+    );
+    min-height: 400px;
+  }
+  .inspection-hero .inspection-canvas {
+    transform: translateY(calc(-1 * clamp(34px, 1.98vw, 38px)));
+  }
+  .inspection-hero .hero-caption {
+    height: var(--sheet-caption);
+    min-height: 0;
+    grid-template-rows: 1fr 28px;
+  }
+  .hero-caption > .hero-title {
+    grid-row: 1 / 3;
+    padding-inline: clamp(25px, 1.67vw, 33px);
+  }
+  .hero-caption > div:not(.hero-ticker),
+  .hero-caption > .technical-link {
+    grid-row: 1;
+  }
+  .hero-caption > .hero-ticker {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    width: 100%;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid var(--line);
+    font-size: clamp(7px, 0.6vw, 12px);
+  }
+  .inspection-hero .field-meta {
+    opacity: 0.35;
+  }
+  .inspection-hero .field-bottom {
+    opacity: 0.4;
+  }
+}
+@media (max-width: 760px) {
+  .hero-caption > .hero-ticker {
+    grid-column: 1 / -1;
+    padding: 0;
+    height: 24px;
+  }
+}
+@media (min-width: 761px) {
+  .header .navigation {
+    font-size: clamp(10px, 0.73vw, 14px);
+  }
+  .header .navigation > .nav-group:first-child {
+    flex: 2;
+  }
+  .header .navigation .how-link {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    font-size: inherit;
+    padding: clamp(12px, 0.9vw, 18px);
+  }
+  .header .navigation .nav-roll {
+    flex-shrink: 0;
+  }
+  .context-story {
+    height: 700svh;
+  }
+  .problem-grid article {
+    padding: 0;
+    gap: 0;
+  }
+  .problem-grid .problem-card-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px clamp(25px, 1.8vw, 35px);
+    border-bottom: 1px dashed var(--line);
+  }
+  .problem-grid .draft-problem {
+    height: clamp(260px, 21vw, 405px);
+    padding: 35px;
+    margin: 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .problem-grid h3 {
+    max-width: 85%;
+    font-size: clamp(24px, 1.8vw, 35px);
+    padding: 30px clamp(25px, 1.8vw, 35px) 25px;
+    min-height: 170px;
+    box-sizing: content-box;
+  }
+  .problem-grid p {
+    padding: 15px clamp(25px, 1.8vw, 35px) 35px;
+    font-size: clamp(14px, 0.94vw, 18px);
+  }
+}
+.context-story {
+  --context-exit: clamp(0, calc((var(--scene-progress, 0) - 0.84) * 6.25), 1);
+}
+@media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
+  .context-story .context-model-stage > .plan-model,
+  .context-findings {
+    transform: translate(calc(-50% - var(--context-exit) * 30%), -50%)
+      scale(calc(1 - var(--context-exit) * 0.1));
+  }
+}
+.context-flow-copy {
+  opacity: clamp(0, calc((var(--scene-progress, 0) - 0.84) * 7), 1);
+  transform: translateX(
+    calc((1 - clamp(0, calc((var(--scene-progress, 0) - 0.84) * 7), 1)) * 25px)
+  );
+}
+@media (prefers-reduced-motion: reduce) {
+  .context-story .context-flow-copy {
+    opacity: 1;
+    transform: none;
+  }
+}
+.problem-card-label {
+  display: flex;
+  justify-content: space-between;
+}
+.final-cta {
+  background-image: linear-gradient(
+    90deg,
+    transparent calc(25% - 0.5px),
+    var(--line) 25%,
+    transparent calc(25% + 0.5px),
+    transparent calc(75% - 0.5px),
+    var(--line) 75%,
+    transparent calc(75% + 0.5px)
+  );
+}
+@media (min-width: 761px) {
+  .problem-grid h3 {
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 180px;
+  }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  .context-story {
+    height: 570svh;
+  }
+}
+.brand-word {
+  display: inline-block;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+}
+.header-scrolled .brand-word {
+  opacity: 0;
+  transform: translateY(-0.25em);
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-word {
+    transition: none;
+  }
+}
+.inspection-hero .drawing-field::before {
+  background:
+    repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 8px)
+      top/100% 5px no-repeat,
+    repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 8px)
+      bottom/100% 5px no-repeat,
+    repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 8px)
+      left/5px 100% no-repeat,
+    repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 8px)
+      right/5px 100% no-repeat;
+}
+.inspection-hero .drawing-field::after {
+  display: none;
+}
+.drawing-corner {
+  position: absolute;
+  z-index: 2;
+  font: 16px/1 var(--mono);
+  background: var(--paper);
+  pointer-events: none;
+}
+.corner-tl,
+.corner-bl {
+  left: clamp(12px, 1.1vw, 21px);
+}
+.corner-tr,
+.corner-br {
+  right: clamp(12px, 1.1vw, 21px);
+}
+.corner-tl,
+.corner-tr {
+  top: 7px;
+}
+.corner-bl,
+.corner-br {
+  bottom: 7px;
+}
+@media (min-width: 761px) {
+  .hero-caption > div:not(.hero-ticker) {
+    font-size: clamp(14px, 0.94vw, 18px);
+  }
+}
+@media (max-width: 760px) {
+  .inspection-hero:not(.compact) .drawing-field {
+    height: calc(52.13svh - 6px);
+    min-height: 330px;
+  }
+  .inspection-hero .inspection-canvas {
+    width: 85%;
+    transform: translateY(-20px);
+  }
+  .hero-caption > .hero-title {
+    font-size: 32px;
+    line-height: 1;
+    padding: 17px 10px;
+  }
+}

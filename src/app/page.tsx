@@ -82,10 +82,11 @@ export default function Home() {
         >
           {problems.map(([t, h, b], i) => (
             <article key={t}>
-              <ProblemDiagram index={i} />
-              <span className="mono">
-                {String(i + 1).padStart(2, "0")} / {t}
+              <span className="mono problem-card-label">
+                <span>{t}</span>
+                <span>[{String(i + 1).padStart(2, "0")}]</span>
               </span>
+              <ProblemDiagram index={i} />
               <h3>{h}</h3>
               <p>{b}</p>
             </article>
